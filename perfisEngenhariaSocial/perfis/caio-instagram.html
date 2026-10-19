@@ -1,0 +1,646 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+
+  <title>Caio Moura (@caio.moura.vc) • Instagram simulado</title>
+
+  <link rel="stylesheet" href="../css/estilos.css">
+  <script src="../js/interface.js" defer></script>
+</head>
+
+<body class="instagram-page">
+  <a class="skip-link" href="#main-content">
+    Pular para o conteúdo
+  </a>
+
+  <!-- MENU LATERAL -->
+  <aside class="ig-sidebar">
+    <a class="ig-wordmark" href="../index.html">
+      Instagram
+    </a>
+
+    <nav class="ig-navigation" aria-label="Navegação principal">
+      <a class="side-link" href="../index.html">
+        <span data-icon="home"></span>
+        <span class="nav-label">Página inicial</span>
+      </a>
+
+      <button class="side-link" type="button" data-demo>
+        <span data-icon="search"></span>
+        <span class="nav-label">Pesquisa</span>
+      </button>
+
+      <button class="side-link" type="button" data-demo>
+        <span data-icon="compass"></span>
+        <span class="nav-label">Explorar</span>
+      </button>
+
+      <button class="side-link" type="button" data-demo>
+        <span data-icon="video"></span>
+        <span class="nav-label">Reels</span>
+      </button>
+
+      <button class="side-link" type="button" data-demo>
+        <span data-icon="message"></span>
+        <span class="nav-label">Mensagens</span>
+      </button>
+
+      <button class="side-link" type="button" data-demo>
+        <span data-icon="heart"></span>
+        <span class="nav-label">Notificações</span>
+      </button>
+
+      <button class="side-link" type="button" data-demo>
+        <span data-icon="plus"></span>
+        <span class="nav-label">Criar</span>
+      </button>
+
+      <a
+        class="side-link active"
+        href="#main-content"
+        aria-current="page"
+      >
+        <img
+          class="mini-avatar"
+          src="../imagens/[CAI-IG-PERFIL].jpg"
+          alt=""
+        >
+        <span class="nav-label">Perfil</span>
+      </a>
+    </nav>
+
+    <div class="ig-sidebar-bottom">
+      <button class="side-link" type="button" data-demo>
+        <span data-icon="menu"></span>
+        <span class="nav-label">Mais</span>
+      </button>
+
+      <span class="sidebar-note">
+        AMBIENTE SIMULADO
+      </span>
+    </div>
+  </aside>
+
+  <!-- PERFIL -->
+  <main id="main-content" class="ig-main">
+    <div class="ig-content">
+
+      <div class="simulation-strip">
+        <span>Perfil fictício · Simulação educativa</span>
+        <a href="../index.html">Trocar de perfil</a>
+      </div>
+
+      <header class="ig-profile-header">
+        <div class="ig-avatar-column">
+          <div class="ig-avatar-ring">
+            <img
+              class="ig-avatar"
+              src="../imagens/[CAI-IG-PERFIL].jpg"
+              alt="Capacete azul com estrela amarela"
+            >
+          </div>
+        </div>
+
+        <div class="ig-profile-information">
+          <div class="ig-profile-top">
+            <h1>caio.moura.vc</h1>
+
+            <div class="ig-profile-actions">
+              <button
+                class="button button-blue button-small"
+                type="button"
+                data-follow
+                aria-pressed="false"
+              >
+                Seguir
+              </button>
+
+              <button
+                class="button button-soft button-small"
+                type="button"
+                data-demo
+              >
+                Enviar mensagem
+              </button>
+
+              <button
+                class="icon-button"
+                type="button"
+                aria-label="Mais opções"
+                data-demo
+              >
+                <span data-icon="more"></span>
+              </button>
+            </div>
+          </div>
+
+          <ul class="ig-statistics">
+            <li><strong>3</strong> publicações</li>
+            <li><strong>—</strong> seguidores</li>
+            <li><strong>—</strong> seguindo</li>
+          </ul>
+
+          <div class="ig-biography">
+            <h2>Caio Moura</h2>
+
+            <p>
+              17 | desenho digital | Orbital Clash |
+              tentando acertar o próximo rabisco
+            </p>
+          </div>
+        </div>
+      </header>
+
+      <!-- DESTAQUES -->
+      <section class="ig-highlights" aria-label="Destaques">
+        <button
+          class="highlight"
+          type="button"
+          data-open-dialog="destaque-roles"
+        >
+          <span class="highlight-ring">
+            <span class="highlight-cover">
+              <img
+                src="../imagens/[CAI-IG-ST01].jpg"
+                alt=""
+              >
+            </span>
+          </span>
+
+          <span>Rolês</span>
+        </button>
+
+        <button
+          class="highlight"
+          type="button"
+          data-open-dialog="destaque-partidas"
+        >
+          <span class="highlight-ring">
+            <span class="highlight-cover">
+              <img
+                src="../imagens/[CAI-IG-ST02].jpg"
+                alt=""
+              >
+            </span>
+          </span>
+
+          <span>Partidas</span>
+        </button>
+      </section>
+
+      <!-- ABAS E GRADE -->
+      <section class="ig-publications" data-tabs>
+        <div
+          class="ig-tabs"
+          role="tablist"
+          aria-label="Conteúdo do perfil"
+        >
+          <button
+            id="ig-tab-posts"
+            class="ig-tab"
+            type="button"
+            role="tab"
+            aria-selected="true"
+            aria-controls="ig-posts"
+          >
+            <span data-icon="grid"></span>
+            PUBLICAÇÕES
+          </button>
+
+          <button
+            id="ig-tab-reels"
+            class="ig-tab"
+            type="button"
+            role="tab"
+            aria-selected="false"
+            aria-controls="ig-reels"
+            tabindex="-1"
+          >
+            <span data-icon="video"></span>
+            REELS
+          </button>
+
+          <button
+            id="ig-tab-tagged"
+            class="ig-tab"
+            type="button"
+            role="tab"
+            aria-selected="false"
+            aria-controls="ig-tagged"
+            tabindex="-1"
+          >
+            <span data-icon="user"></span>
+            MARCADOS
+          </button>
+        </div>
+
+        <div
+          id="ig-posts"
+          role="tabpanel"
+          aria-labelledby="ig-tab-posts"
+        >
+          <div class="ig-grid">
+
+            <!-- Mais recente: CAI-IG-03 -->
+            <button
+              class="ig-grid-button"
+              type="button"
+              data-open-dialog="post-ig-03"
+              aria-label="Abrir publicação de 11 de outubro de 2026"
+            >
+              <img
+                class="ig-photo"
+                src="../imagens/[CAI-IG-03].jpg"
+                alt="Caio desenhando; a gata Pipoca aparece na tela do tablet"
+                loading="lazy"
+              >
+            </button>
+
+            <!-- CAI-IG-02 -->
+            <button
+              class="ig-grid-button"
+              type="button"
+              data-open-dialog="post-ig-02"
+              aria-label="Abrir publicação de 2 de outubro de 2026"
+            >
+              <img
+                class="ig-photo"
+                src="../imagens/[CAI-IG-02].jpg"
+                alt="Cartaz da mostra de jogos com Caio e Iara usando camisetas da Nebulosa 5"
+                loading="lazy"
+              >
+            </button>
+
+            <!-- Mais antiga: CAI-IG-01 -->
+            <button
+              class="ig-grid-button"
+              type="button"
+              data-open-dialog="post-ig-01"
+              aria-label="Abrir publicação de 18 de setembro de 2026"
+            >
+              <img
+                class="ig-photo"
+                src="../imagens/[CAI-IG-01].jpg"
+                alt="Comemoração com bolo e velas de 17 anos"
+                loading="lazy"
+              >
+            </button>
+
+          </div>
+        </div>
+
+        <div
+          id="ig-reels"
+          class="network-empty"
+          role="tabpanel"
+          aria-labelledby="ig-tab-reels"
+          hidden
+        >
+          <span data-icon="video"></span>
+          <h2>Nenhum reel</h2>
+        </div>
+
+        <div
+          id="ig-tagged"
+          class="network-empty"
+          role="tabpanel"
+          aria-labelledby="ig-tab-tagged"
+          hidden
+        >
+          <span data-icon="user"></span>
+          <h2>Nenhuma publicação marcada</h2>
+        </div>
+      </section>
+
+      <footer class="ig-footer">
+        Perfil fictício para simulação educativa.
+        Sem vínculo com o Instagram.
+      </footer>
+    </div>
+  </main>
+
+  <!-- PUBLICAÇÃO CAI-IG-01 -->
+  <dialog
+    id="post-ig-01"
+    class="publication-dialog"
+    aria-labelledby="post-ig-01-title"
+  >
+    <div class="publication-dialog-top">
+      <h2 id="post-ig-01-title">
+        Publicação de caio.moura.vc
+      </h2>
+
+      <form method="dialog">
+        <button
+          class="icon-button"
+          type="submit"
+          aria-label="Fechar publicação"
+          autofocus
+        >
+          ✕
+        </button>
+      </form>
+    </div>
+
+    <div class="publication-dialog-layout">
+      <img
+        class="publication-dialog-image"
+        src="../imagens/[CAI-IG-01].jpg"
+        alt="Caio ao centro, Lia à esquerda e Davi à direita junto a um bolo com velas de 17 anos"
+      >
+
+      <div class="publication-dialog-content">
+        <p class="publication-caption">
+          <strong>caio.moura.vc</strong>
+          17 voltas ao sol. Obrigado por tornarem hoje leve
+        </p>
+
+        <time datetime="2026-09-18T19:12">
+          18 de setembro de 2026 às 19h12
+        </time>
+
+        <h3>Comentários</h3>
+
+        <ul class="publication-comments">
+          <li>
+            <strong>@lia.moura.vc</strong>
+            Feliz aniversário, filho! Orgulho de você.
+          </li>
+
+          <li>
+            <strong>@davi.moura.vc</strong>
+            Primo, ainda tô esperando minha fatia de bolo
+          </li>
+
+          <li>
+            <strong>@bruno.vale.vc</strong>
+            Parabéns, Caio! Amanhã eu te entrego o desenho.
+          </li>
+        </ul>
+      </div>
+    </div>
+  </dialog>
+
+  <!-- PUBLICAÇÃO CAI-IG-02 -->
+  <dialog
+    id="post-ig-02"
+    class="publication-dialog"
+    aria-labelledby="post-ig-02-title"
+  >
+    <div class="publication-dialog-top">
+      <h2 id="post-ig-02-title">
+        Publicação de caio.moura.vc
+      </h2>
+
+      <form method="dialog">
+        <button
+          class="icon-button"
+          type="submit"
+          aria-label="Fechar publicação"
+          autofocus
+        >
+          ✕
+        </button>
+      </form>
+    </div>
+
+    <div class="publication-dialog-layout">
+      <img
+        class="publication-dialog-image"
+        src="../imagens/[CAI-IG-02].jpg"
+        alt="Cartaz da Mostra de Jogos do Colégio Horizonte do Vale; Caio e Iara usam camisetas da Nebulosa 5"
+      >
+
+      <div class="publication-dialog-content">
+        <p class="publication-caption">
+          <strong>caio.moura.vc</strong>
+          Projeto da mostra entregue! A Iara salvou a apresentação
+          quando meu notebook resolveu atualizar
+        </p>
+
+        <time datetime="2026-10-02T16:40">
+          2 de outubro de 2026 às 16h40
+        </time>
+
+        <h3>Comentários</h3>
+
+        <ul class="publication-comments">
+          <li>
+            <strong>@iara.solis.vc</strong>
+            A gente conseguiu, colega de 2º ano! Agora é descansar.
+          </li>
+
+          <li>
+            <strong>@bruno.vale.vc</strong>
+            A camisa da equipe ficou boa demais.
+          </li>
+
+          <li>
+            <strong>@davi.moura.vc</strong>
+            Curti o desenho da estrela na manga.
+          </li>
+        </ul>
+      </div>
+    </div>
+  </dialog>
+
+  <!-- PUBLICAÇÃO CAI-IG-03 -->
+  <dialog
+    id="post-ig-03"
+    class="publication-dialog"
+    aria-labelledby="post-ig-03-title"
+  >
+    <div class="publication-dialog-top">
+      <h2 id="post-ig-03-title">
+        Publicação de caio.moura.vc
+      </h2>
+
+      <form method="dialog">
+        <button
+          class="icon-button"
+          type="submit"
+          aria-label="Fechar publicação"
+          autofocus
+        >
+          ✕
+        </button>
+      </form>
+    </div>
+
+    <div class="publication-dialog-layout">
+      <img
+        class="publication-dialog-image"
+        src="../imagens/[CAI-IG-03].jpg"
+        alt="Caio desenhando em um banco; a gata Pipoca aparece na tela do tablet"
+      >
+
+      <div class="publication-dialog-content">
+        <p class="publication-caption">
+          <strong>caio.moura.vc</strong>
+          Saí para rabiscar um pouco. A Pipoca virou personagem
+          principal sem pedir licença
+        </p>
+
+        <time datetime="2026-10-11T15:05">
+          11 de outubro de 2026 às 15h05
+        </time>
+
+        <h3>Comentários</h3>
+
+        <ul class="publication-comments">
+          <li>
+            <strong>@lia.moura.vc</strong>
+            Ela aprovou o retrato quando você chegou em casa.
+          </li>
+
+          <li>
+            <strong>@iara.solis.vc</strong>
+            Esse céu ficou muito bom!
+          </li>
+
+          <li>
+            <strong>@bruno.vale.vc</strong>
+            Me ensina esse pincel depois?
+          </li>
+        </ul>
+      </div>
+    </div>
+  </dialog>
+
+  <!-- DESTAQUE: ROLÊS -->
+  <dialog
+    id="destaque-roles"
+    class="publication-dialog"
+    aria-labelledby="destaque-roles-title"
+  >
+    <div class="publication-dialog-top">
+      <h2 id="destaque-roles-title">Rolês</h2>
+
+      <form method="dialog">
+        <button
+          class="icon-button"
+          type="submit"
+          aria-label="Fechar destaque"
+          autofocus
+        >
+          ✕
+        </button>
+      </form>
+    </div>
+
+    <div class="story-list">
+      <article class="story-item">
+        <img
+          src="../imagens/[CAI-IG-ST01].jpg"
+          alt="Fachada ilustrada da Arena Pixel Nascente"
+        >
+
+        <p class="story-location">
+          Alto das Nuvens · Vila Cedro
+        </p>
+
+        <p>
+          Primeira vez aqui com o pessoal.
+          O mural de jogos é muito bom.
+        </p>
+
+        <time datetime="2026-10-05T17:20">
+          5 de outubro de 2026 às 17h20
+        </time>
+      </article>
+
+      <article class="story-item">
+        <img
+          src="../imagens/[CAI-IG-ST03].jpg"
+          alt="Lago e letreiro da Praça do Ipê Azul"
+        >
+
+        <p class="story-location">
+          Vila Cedro
+        </p>
+
+        <p>
+          Pausa para desenhar. Hoje o céu tá bonito demais
+        </p>
+
+        <time datetime="2026-10-11T15:18">
+          11 de outubro de 2026 às 15h18
+        </time>
+      </article>
+    </div>
+  </dialog>
+
+  <!-- DESTAQUE: PARTIDAS -->
+  <dialog
+    id="destaque-partidas"
+    class="publication-dialog"
+    aria-labelledby="destaque-partidas-title"
+  >
+    <div class="publication-dialog-top">
+      <h2 id="destaque-partidas-title">Partidas</h2>
+
+      <form method="dialog">
+        <button
+          class="icon-button"
+          type="submit"
+          aria-label="Fechar destaque"
+          autofocus
+        >
+          ✕
+        </button>
+      </form>
+    </div>
+
+    <div class="story-list">
+      <article class="story-item">
+        <img
+          src="../imagens/[CAI-IG-ST02].jpg"
+          alt="Mesa com fone, controle e desenho de estrela"
+        >
+
+        <p>
+          Terça de partida com a equipe. Começa às 20h
+        </p>
+
+        <time datetime="2026-10-06T19:52">
+          6 de outubro de 2026 às 19h52
+        </time>
+      </article>
+
+      <article class="story-item">
+        <img
+          src="../imagens/[CAI-IG-ST04].jpg"
+          alt="Tela ilustrada de Orbital Clash indicando sala pronta"
+        >
+
+        <p>
+          Quinta de treino com a Nebulosa 5. Já já, 20h.
+        </p>
+
+        <time datetime="2026-10-15T19:56">
+          15 de outubro de 2026 às 19h56
+        </time>
+      </article>
+    </div>
+  </dialog>
+
+  <div class="toast" role="status" aria-live="polite"></div>
+
+  <script>
+    document
+      .querySelectorAll("[data-open-dialog]")
+      .forEach((button) => {
+        button.addEventListener("click", () => {
+          const dialogId = button.dataset.openDialog;
+          const dialog = document.getElementById(dialogId);
+
+          if (dialog instanceof HTMLDialogElement) {
+            dialog.showModal();
+          }
+        });
+      });
+  </script>
+</body>
+</html>

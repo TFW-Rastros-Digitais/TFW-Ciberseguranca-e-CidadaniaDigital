@@ -1,0 +1,647 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+
+  <title>Marina Azevedo (@marina.azevedo.vc) • Instagram simulado</title>
+
+  <link rel="stylesheet" href="../css/estilos.css">
+  <script src="../js/interface.js" defer></script>
+</head>
+
+<body class="instagram-page">
+  <a class="skip-link" href="#main-content">
+    Pular para o conteúdo
+  </a>
+
+  <!-- MENU LATERAL -->
+  <aside class="ig-sidebar">
+    <a class="ig-wordmark" href="../index.html">
+      Instagram
+    </a>
+
+    <nav class="ig-navigation" aria-label="Navegação principal">
+      <a class="side-link" href="../index.html">
+        <span data-icon="home"></span>
+        <span class="nav-label">Página inicial</span>
+      </a>
+
+      <button class="side-link" type="button" data-demo>
+        <span data-icon="search"></span>
+        <span class="nav-label">Pesquisa</span>
+      </button>
+
+      <button class="side-link" type="button" data-demo>
+        <span data-icon="compass"></span>
+        <span class="nav-label">Explorar</span>
+      </button>
+
+      <button class="side-link" type="button" data-demo>
+        <span data-icon="video"></span>
+        <span class="nav-label">Reels</span>
+      </button>
+
+      <button class="side-link" type="button" data-demo>
+        <span data-icon="message"></span>
+        <span class="nav-label">Mensagens</span>
+      </button>
+
+      <button class="side-link" type="button" data-demo>
+        <span data-icon="heart"></span>
+        <span class="nav-label">Notificações</span>
+      </button>
+
+      <button class="side-link" type="button" data-demo>
+        <span data-icon="plus"></span>
+        <span class="nav-label">Criar</span>
+      </button>
+
+      <a
+        class="side-link active"
+        href="#main-content"
+        aria-current="page"
+      >
+        <img
+          class="mini-avatar"
+          src="../imagens/[MAR-IG-PERFIL].jpg"
+          alt=""
+        >
+        <span class="nav-label">Perfil</span>
+      </a>
+    </nav>
+
+    <div class="ig-sidebar-bottom">
+      <button class="side-link" type="button" data-demo>
+        <span data-icon="menu"></span>
+        <span class="nav-label">Mais</span>
+      </button>
+
+      <span class="sidebar-note">
+        AMBIENTE SIMULADO
+      </span>
+    </div>
+  </aside>
+
+  <!-- PERFIL -->
+  <main id="main-content" class="ig-main">
+    <div class="ig-content">
+
+      <div class="simulation-strip">
+        <span>Perfil fictício · Simulação educativa</span>
+        <a href="../index.html">Trocar de perfil</a>
+      </div>
+
+      <header class="ig-profile-header">
+        <div class="ig-avatar-column">
+          <div class="ig-avatar-ring">
+            <img
+              class="ig-avatar"
+              src="../imagens/[MAR-IG-PERFIL].jpg"
+              alt="Câmera vermelha ilustrada com raio branco"
+            >
+          </div>
+        </div>
+
+        <div class="ig-profile-information">
+          <div class="ig-profile-top">
+            <h1>marina.azevedo.vc</h1>
+
+            <div class="ig-profile-actions">
+              <button
+                class="button button-blue button-small"
+                type="button"
+                data-follow
+                aria-pressed="false"
+              >
+                Seguir
+              </button>
+
+              <button
+                class="button button-soft button-small"
+                type="button"
+                data-demo
+              >
+                Enviar mensagem
+              </button>
+
+              <button
+                class="icon-button"
+                type="button"
+                aria-label="Mais opções"
+                data-demo
+              >
+                <span data-icon="more"></span>
+              </button>
+            </div>
+          </div>
+
+          <ul class="ig-statistics">
+            <li><strong>3</strong> publicações</li>
+            <li><strong>—</strong> seguidores</li>
+            <li><strong>—</strong> seguindo</li>
+          </ul>
+
+          <div class="ig-biography">
+            <h2>Marina Azevedo</h2>
+
+            <p>
+              15 | fotos do céu | vôlei | um dia de cada vez
+            </p>
+          </div>
+        </div>
+      </header>
+
+      <!-- DESTAQUES -->
+      <section class="ig-highlights" aria-label="Destaques">
+        <button
+          class="highlight"
+          type="button"
+          data-open-dialog="marina-destaque-ruas"
+        >
+          <span class="highlight-ring">
+            <span class="highlight-cover">
+              <img
+                src="../imagens/[MAR-IG-ST01].jpg"
+                alt=""
+              >
+            </span>
+          </span>
+
+          <span>Pelas ruas</span>
+        </button>
+
+        <button
+          class="highlight"
+          type="button"
+          data-open-dialog="marina-destaque-volei"
+        >
+          <span class="highlight-ring">
+            <span class="highlight-cover">
+              <img
+                src="../imagens/[MAR-IG-ST02].jpeg"
+                alt=""
+              >
+            </span>
+          </span>
+
+          <span>Vôlei</span>
+        </button>
+      </section>
+
+      <!-- ABAS E GRADE -->
+      <section class="ig-publications" data-tabs>
+        <div
+          class="ig-tabs"
+          role="tablist"
+          aria-label="Conteúdo do perfil"
+        >
+          <button
+            id="marina-ig-tab-posts"
+            class="ig-tab"
+            type="button"
+            role="tab"
+            aria-selected="true"
+            aria-controls="marina-ig-posts"
+          >
+            <span data-icon="grid"></span>
+            PUBLICAÇÕES
+          </button>
+
+          <button
+            id="marina-ig-tab-reels"
+            class="ig-tab"
+            type="button"
+            role="tab"
+            aria-selected="false"
+            aria-controls="marina-ig-reels"
+            tabindex="-1"
+          >
+            <span data-icon="video"></span>
+            REELS
+          </button>
+
+          <button
+            id="marina-ig-tab-tagged"
+            class="ig-tab"
+            type="button"
+            role="tab"
+            aria-selected="false"
+            aria-controls="marina-ig-tagged"
+            tabindex="-1"
+          >
+            <span data-icon="user"></span>
+            MARCADOS
+          </button>
+        </div>
+
+        <div
+          id="marina-ig-posts"
+          role="tabpanel"
+          aria-labelledby="marina-ig-tab-posts"
+        >
+          <div class="ig-grid">
+
+            <!-- MAR-IG-03: MAIS RECENTE -->
+            <button
+              class="ig-grid-button"
+              type="button"
+              data-open-dialog="marina-post-ig-03"
+              aria-label="Abrir publicação de 27 de setembro de 2026"
+            >
+              <img
+                class="ig-photo"
+                src="../imagens/[MAR-IG-03].jpeg"
+                alt="Cachorro marrom com plaquinha Thor e uma bola de vôlei ao fundo"
+                loading="lazy"
+              >
+            </button>
+
+            <!-- MAR-IG-02 -->
+            <button
+              class="ig-grid-button"
+              type="button"
+              data-open-dialog="marina-post-ig-02"
+              aria-label="Abrir publicação de 3 de agosto de 2026"
+            >
+              <img
+                class="ig-photo"
+                src="../imagens/[MAR-IG-02].jpg"
+                alt="Marina na Mostra Fotográfica do Colégio Pátio das Oliveiras"
+                loading="lazy"
+              >
+            </button>
+
+            <!-- MAR-IG-01: MAIS ANTIGA -->
+            <button
+              class="ig-grid-button"
+              type="button"
+              data-open-dialog="marina-post-ig-01"
+              aria-label="Abrir publicação de 14 de maio de 2026"
+            >
+              <img
+                class="ig-photo"
+                src="../imagens/[MAR-IG-01].jpg"
+                alt="Comemoração com bolo e velas de 15 anos"
+                loading="lazy"
+              >
+            </button>
+
+          </div>
+        </div>
+
+        <div
+          id="marina-ig-reels"
+          class="network-empty"
+          role="tabpanel"
+          aria-labelledby="marina-ig-tab-reels"
+          hidden
+        >
+          <span data-icon="video"></span>
+          <h2>Nenhum reel</h2>
+        </div>
+
+        <div
+          id="marina-ig-tagged"
+          class="network-empty"
+          role="tabpanel"
+          aria-labelledby="marina-ig-tab-tagged"
+          hidden
+        >
+          <span data-icon="user"></span>
+          <h2>Nenhuma publicação marcada</h2>
+        </div>
+      </section>
+
+      <footer class="ig-footer">
+        Perfil fictício para simulação educativa.
+        Sem vínculo com o Instagram.
+      </footer>
+    </div>
+  </main>
+
+  <!-- PUBLICAÇÃO MAR-IG-01: ANIVERSÁRIO -->
+  <dialog
+    id="marina-post-ig-01"
+    class="publication-dialog"
+    aria-labelledby="marina-post-ig-01-title"
+  >
+    <div class="publication-dialog-top">
+      <h2 id="marina-post-ig-01-title">
+        Publicação de marina.azevedo.vc
+      </h2>
+
+      <form method="dialog">
+        <button
+          class="icon-button"
+          type="submit"
+          aria-label="Fechar publicação"
+          autofocus
+        >
+          ✕
+        </button>
+      </form>
+    </div>
+
+    <div class="publication-dialog-layout">
+      <img
+        class="publication-dialog-image"
+        src="../imagens/[MAR-IG-01].jpg"
+        alt="Marina com bolo e velas de 15 anos, acompanhada de duas pessoas em ilustração"
+      >
+
+      <div class="publication-dialog-content">
+        <p class="publication-caption">
+          <strong>marina.azevedo.vc</strong>
+          Quinze! Obrigada por estarem comigo hoje
+        </p>
+
+        <time datetime="2026-05-14T19:10">
+          14 de maio de 2026 às 19h10
+        </time>
+
+        <h3>Comentários</h3>
+
+        <ul class="publication-comments">
+          <li>
+            <strong>@bia.azevedo.vc</strong>
+            Feliz aniversário, irmã!
+          </li>
+
+          <li>
+            <strong>@sonia.azevedo.vc</strong>
+            Te amo, filha
+          </li>
+
+          <li>
+            <strong>@luna.prado.vc</strong>
+            A foto do bolo ficou linda!
+          </li>
+        </ul>
+      </div>
+    </div>
+  </dialog>
+
+  <!-- PUBLICAÇÃO MAR-IG-02: ESCOLA -->
+  <dialog
+    id="marina-post-ig-02"
+    class="publication-dialog"
+    aria-labelledby="marina-post-ig-02-title"
+  >
+    <div class="publication-dialog-top">
+      <h2 id="marina-post-ig-02-title">
+        Publicação de marina.azevedo.vc
+      </h2>
+
+      <form method="dialog">
+        <button
+          class="icon-button"
+          type="submit"
+          aria-label="Fechar publicação"
+          autofocus
+        >
+          ✕
+        </button>
+      </form>
+    </div>
+
+    <div class="publication-dialog-layout">
+      <img
+        class="publication-dialog-image"
+        src="../imagens/[MAR-IG-02].jpg"
+        alt="Marina com camiseta do Colégio Pátio das Oliveiras perto do cartaz Mostra Fotográfica — 1º ano"
+      >
+
+      <div class="publication-dialog-content">
+        <p class="publication-caption">
+          <strong>marina.azevedo.vc</strong>
+          Primeira foto na mostra da escola!
+          O Teo ajudou a escolher a moldura.
+        </p>
+
+        <time datetime="2026-08-03T13:40">
+          3 de agosto de 2026 às 13h40
+        </time>
+
+        <h3>Comentários</h3>
+
+        <ul class="publication-comments">
+          <li>
+            <strong>@teo.farias.vc</strong>
+            A luz dessa foto ficou ótima
+          </li>
+
+          <li>
+            <strong>@luna.prado.vc</strong>
+            Orgulho da nossa turma
+          </li>
+
+          <li>
+            <strong>@bia.azevedo.vc</strong>
+            Vou ver a mostra depois
+          </li>
+        </ul>
+      </div>
+    </div>
+  </dialog>
+
+  <!-- PUBLICAÇÃO MAR-IG-03: THOR -->
+  <dialog
+    id="marina-post-ig-03"
+    class="publication-dialog"
+    aria-labelledby="marina-post-ig-03-title"
+  >
+    <div class="publication-dialog-top">
+      <h2 id="marina-post-ig-03-title">
+        Publicação de marina.azevedo.vc
+      </h2>
+
+      <form method="dialog">
+        <button
+          class="icon-button"
+          type="submit"
+          aria-label="Fechar publicação"
+          autofocus
+        >
+          ✕
+        </button>
+      </form>
+    </div>
+
+    <div class="publication-dialog-layout">
+      <img
+        class="publication-dialog-image"
+        src="../imagens/[MAR-IG-03].jpeg"
+        alt="Cachorro marrom com plaquinha Thor e bola de vôlei ao fundo"
+      >
+
+      <div class="publication-dialog-content">
+        <p class="publication-caption">
+          <strong>marina.azevedo.vc</strong>
+          Thor acha que toda bola é dele
+        </p>
+
+        <time datetime="2026-09-27T17:02">
+          27 de setembro de 2026 às 17h02
+        </time>
+
+        <h3>Comentários</h3>
+
+        <ul class="publication-comments">
+          <li>
+            <strong>@sonia.azevedo.vc</strong>
+            Ele saiu correndo com a bola depois
+          </li>
+
+          <li>
+            <strong>@luna.prado.vc</strong>
+            Meu jogador favorito
+          </li>
+
+          <li>
+            <strong>@teo.farias.vc</strong>
+            Esse retrato merece moldura
+          </li>
+        </ul>
+      </div>
+    </div>
+  </dialog>
+
+  <!-- DESTAQUE: PELAS RUAS -->
+  <dialog
+    id="marina-destaque-ruas"
+    class="publication-dialog"
+    aria-labelledby="marina-destaque-ruas-title"
+  >
+    <div class="publication-dialog-top">
+      <h2 id="marina-destaque-ruas-title">
+        Pelas ruas
+      </h2>
+
+      <form method="dialog">
+        <button
+          class="icon-button"
+          type="submit"
+          aria-label="Fechar destaque"
+          autofocus
+        >
+          ✕
+        </button>
+      </form>
+    </div>
+
+    <div class="story-list">
+      <article class="story-item">
+        <img
+          src="../imagens/[MAR-IG-ST01].jpg"
+          alt="Fachada ilustrada da Quadra Aurora"
+        >
+
+        <p class="story-location">
+          Jardim das Brisas · Vila Cedro
+        </p>
+
+        <p>Cheguei para ver o jogo da Luna</p>
+
+        <time datetime="2026-08-19T15:55">
+          19 de agosto de 2026 às 15h55
+        </time>
+      </article>
+
+      <article class="story-item">
+        <img
+          src="../imagens/[MAR-IG-ST03].jpg"
+          alt="Balcão ilustrado do Café Folha Azul"
+        >
+
+        <p class="story-location">
+          Vila Cedro
+        </p>
+
+        <p>
+          Pausa para escolher as fotos da semana.
+        </p>
+
+        <time datetime="2026-09-12T14:25">
+          12 de setembro de 2026 às 14h25
+        </time>
+      </article>
+    </div>
+  </dialog>
+
+  <!-- DESTAQUE: VÔLEI -->
+  <dialog
+    id="marina-destaque-volei"
+    class="publication-dialog"
+    aria-labelledby="marina-destaque-volei-title"
+  >
+    <div class="publication-dialog-top">
+      <h2 id="marina-destaque-volei-title">
+        Vôlei
+      </h2>
+
+      <form method="dialog">
+        <button
+          class="icon-button"
+          type="submit"
+          aria-label="Fechar destaque"
+          autofocus
+        >
+          ✕
+        </button>
+      </form>
+    </div>
+
+    <div class="story-list">
+      <article class="story-item">
+        <img
+          src="../imagens/[MAR-IG-ST02].jpeg"
+          alt="Tênis e bola de vôlei"
+        >
+
+        <p>
+          Quarta, treino das 16h chegando
+        </p>
+
+        <time datetime="2026-08-26T15:47">
+          26 de agosto de 2026 às 15h47
+        </time>
+      </article>
+
+      <article class="story-item">
+        <img
+          src="../imagens/[MAR-IG-ST04].jpg"
+          alt="Mochila de vôlei e garrafa de água"
+        >
+
+        <p>
+          Outra quarta, mais um treino às 16h.
+        </p>
+
+        <time datetime="2026-10-07T15:50">
+          7 de outubro de 2026 às 15h50
+        </time>
+      </article>
+    </div>
+  </dialog>
+
+  <div class="toast" role="status" aria-live="polite"></div>
+
+  <!-- Abre as publicações e os destaques ao clicar -->
+  <script>
+    document
+      .querySelectorAll("[data-open-dialog]")
+      .forEach((button) => {
+        button.addEventListener("click", () => {
+          const dialog = document.getElementById(
+            button.dataset.openDialog
+          );
+
+          if (dialog instanceof HTMLDialogElement) {
+            dialog.showModal();
+          }
+        });
+      });
+  </script>
+</body>
+</html>

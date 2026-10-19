@@ -1,0 +1,638 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+
+  <title>Mari (@MarihQuadra) / Twitter simulado</title>
+
+  <link rel="stylesheet" href="../css/estilos.css">
+  <script src="../js/interface.js" defer></script>
+</head>
+
+<body class="twitter-page">
+  <a class="skip-link" href="#main-content">
+    Pular para o conteúdo
+  </a>
+
+  <div class="tw-layout">
+
+    <!-- MENU LATERAL -->
+    <aside class="tw-sidebar">
+      <a
+        class="tw-wordmark"
+        href="../index.html"
+        aria-label="Página inicial"
+      >
+        <span data-icon="message"></span>
+        <span class="nav-label">Twitter</span>
+      </a>
+
+      <nav class="tw-navigation" aria-label="Navegação principal">
+        <a class="tw-nav-link" href="../index.html">
+          <span data-icon="home"></span>
+          <span class="nav-label">Página inicial</span>
+        </a>
+
+        <button class="tw-nav-link" type="button" data-demo>
+          <span data-icon="search"></span>
+          <span class="nav-label">Explorar</span>
+        </button>
+
+        <button class="tw-nav-link" type="button" data-demo>
+          <span data-icon="bell"></span>
+          <span class="nav-label">Notificações</span>
+        </button>
+
+        <button class="tw-nav-link" type="button" data-demo>
+          <span data-icon="mail"></span>
+          <span class="nav-label">Mensagens</span>
+        </button>
+
+        <button class="tw-nav-link" type="button" data-demo>
+          <span data-icon="bookmark"></span>
+          <span class="nav-label">Itens salvos</span>
+        </button>
+
+        <button class="tw-nav-link" type="button" data-demo>
+          <span data-icon="users"></span>
+          <span class="nav-label">Comunidades</span>
+        </button>
+
+        <a
+          class="tw-nav-link active"
+          href="#main-content"
+          aria-current="page"
+        >
+          <span data-icon="user"></span>
+          <span class="nav-label">Perfil</span>
+        </a>
+
+        <button class="tw-nav-link" type="button" data-demo>
+          <span data-icon="more"></span>
+          <span class="nav-label">Mais</span>
+        </button>
+      </nav>
+
+      <button class="tw-publish" type="button" data-demo>
+        <span data-icon="plus"></span>
+        <span class="nav-label">Publicar</span>
+      </button>
+
+      <div class="tw-sidebar-note">
+        Ambiente simulado
+      </div>
+    </aside>
+
+    <!-- COLUNA PRINCIPAL -->
+    <main id="main-content" class="tw-main">
+      <header class="tw-topbar">
+        <a
+          class="icon-button"
+          href="../index.html"
+          aria-label="Voltar à seleção de perfis"
+        >
+          <span data-icon="arrow-left"></span>
+        </a>
+
+        <div>
+          <h1>Mari</h1>
+          <p>5 publicações</p>
+        </div>
+      </header>
+
+      <!-- Capa estilizada até existir uma imagem de capa -->
+      <div
+        class="tw-cover marina-cover"
+        role="img"
+        aria-label="Capa ilustrativa inspirada em uma quadra de vôlei"
+      >
+        <span class="marina-cover-ball" aria-hidden="true"></span>
+      </div>
+
+      <section class="tw-profile" aria-label="Informações do perfil">
+        <div class="tw-profile-toolbar">
+          <img
+            class="tw-avatar"
+            src="../imagens/[MAR-TT-PERFIL].jpg"
+            alt="Câmera vermelha ilustrada com raio branco"
+          >
+
+          <div class="tw-profile-actions">
+            <button
+              class="icon-button bordered"
+              type="button"
+              aria-label="Mais opções"
+              data-demo
+            >
+              <span data-icon="more"></span>
+            </button>
+
+            <button
+              class="icon-button bordered"
+              type="button"
+              aria-label="Enviar mensagem"
+              data-demo
+            >
+              <span data-icon="mail"></span>
+            </button>
+
+            <button
+              class="button button-dark button-pill"
+              type="button"
+              data-follow
+              aria-pressed="false"
+            >
+              Seguir
+            </button>
+          </div>
+        </div>
+
+        <div class="tw-identity">
+          <h2>Mari</h2>
+          <p class="muted">@MarihQuadra</p>
+        </div>
+
+        <p class="tw-bio">
+          Fotos, vôlei e futebol. Vila Cedro.
+        </p>
+
+        <div class="tw-statistics">
+          <span><strong>—</strong> Seguindo</span>
+          <span><strong>—</strong> Seguidores</span>
+        </div>
+
+        <div class="tw-simulation-note">
+          Perfil fictício · Ambiente de simulação
+        </div>
+      </section>
+
+      <!-- ABAS -->
+      <section data-tabs>
+        <div
+          class="tw-tabs"
+          role="tablist"
+          aria-label="Conteúdo do perfil"
+        >
+          <button
+            id="marina-tw-tab-posts"
+            type="button"
+            role="tab"
+            aria-selected="true"
+            aria-controls="marina-tw-posts"
+          >
+            <span>Publicações</span>
+          </button>
+
+          <button
+            id="marina-tw-tab-replies"
+            type="button"
+            role="tab"
+            aria-selected="false"
+            aria-controls="marina-tw-replies"
+            tabindex="-1"
+          >
+            <span>Respostas</span>
+          </button>
+
+          <button
+            id="marina-tw-tab-media"
+            type="button"
+            role="tab"
+            aria-selected="false"
+            aria-controls="marina-tw-media"
+            tabindex="-1"
+          >
+            <span>Mídia</span>
+          </button>
+        </div>
+
+        <div
+          id="marina-tw-posts"
+          role="tabpanel"
+          aria-labelledby="marina-tw-tab-posts"
+        >
+
+          <!-- MAR-X-01: POST FIXADO -->
+          <article class="tw-post">
+            <img
+              class="tw-post-avatar"
+              src="../imagens/[MAR-TT-PERFIL].jpg"
+              alt=""
+            >
+
+            <div class="tw-post-body">
+              <p class="tw-context">Fixado</p>
+
+              <div class="tw-post-heading">
+                <div class="tw-post-author">
+                  <strong>Mari</strong>
+                  <span>@MarihQuadra</span>
+                  <time datetime="2026-08-22T18:16">
+                    · 22 de ago. de 2026
+                  </time>
+                </div>
+
+                <button
+                  class="icon-button"
+                  type="button"
+                  aria-label="Opções da publicação"
+                  data-demo
+                >
+                  <span data-icon="more"></span>
+                </button>
+              </div>
+
+              <p class="tw-post-text">
+                Dia de jogo do Flamengo e de separar fotos da semana.
+                Meu tipo de sábado
+              </p>
+
+              <p class="tw-post-time">18h16</p>
+
+              <div class="tw-post-actions">
+                <button type="button" aria-label="Responder" data-demo>
+                  <span data-icon="message"></span><span>0</span>
+                </button>
+
+                <button type="button" aria-label="Repostar" data-demo>
+                  <span data-icon="repeat"></span><span>0</span>
+                </button>
+
+                <button
+                  type="button"
+                  aria-label="Curtir"
+                  aria-pressed="false"
+                  data-like
+                >
+                  <span data-icon="heart"></span>
+                  <span data-like-count>0</span>
+                </button>
+
+                <button type="button" aria-label="Visualizações" data-demo>
+                  <span data-icon="chart"></span><span>0</span>
+                </button>
+
+                <button type="button" aria-label="Salvar" data-demo>
+                  <span data-icon="bookmark"></span>
+                </button>
+              </div>
+            </div>
+          </article>
+
+          <!-- MAR-X-02: ROTINA -->
+          <article class="tw-post">
+            <img
+              class="tw-post-avatar"
+              src="../imagens/[MAR-TT-PERFIL].jpg"
+              alt=""
+            >
+
+            <div class="tw-post-body">
+              <div class="tw-post-heading">
+                <div class="tw-post-author">
+                  <strong>Mari</strong>
+                  <span>@MarihQuadra</span>
+                  <time datetime="2026-09-30T14:20">
+                    · 30 de set. de 2026
+                  </time>
+                </div>
+
+                <button
+                  class="icon-button"
+                  type="button"
+                  aria-label="Opções da publicação"
+                  data-demo
+                >
+                  <span data-icon="more"></span>
+                </button>
+              </div>
+
+              <p class="tw-post-text">
+                Quarta é treino de vôlei às 16h na Quadra Aurora.
+                Preciso lembrar da garrafa hoje.
+              </p>
+
+              <p class="tw-post-time">14h20</p>
+
+              <div class="tw-post-actions">
+                <button type="button" aria-label="Responder" data-demo>
+                  <span data-icon="message"></span><span>0</span>
+                </button>
+
+                <button type="button" aria-label="Repostar" data-demo>
+                  <span data-icon="repeat"></span><span>0</span>
+                </button>
+
+                <button
+                  type="button"
+                  aria-label="Curtir"
+                  aria-pressed="false"
+                  data-like
+                >
+                  <span data-icon="heart"></span>
+                  <span data-like-count>0</span>
+                </button>
+
+                <button type="button" aria-label="Visualizações" data-demo>
+                  <span data-icon="chart"></span><span>0</span>
+                </button>
+
+                <button type="button" aria-label="Salvar" data-demo>
+                  <span data-icon="bookmark"></span>
+                </button>
+              </div>
+            </div>
+          </article>
+
+          <!-- MAR-X-05: REPOST COM COMENTÁRIO -->
+          <article class="tw-post">
+            <img
+              class="tw-post-avatar"
+              src="../imagens/[MAR-TT-PERFIL].jpg"
+              alt=""
+            >
+
+            <div class="tw-post-body">
+              <p class="tw-context">
+                Mari comentou uma publicação
+              </p>
+
+              <div class="tw-post-heading">
+                <div class="tw-post-author">
+                  <strong>Mari</strong>
+                  <span>@MarihQuadra</span>
+                  <time datetime="2026-08-05T18:02">
+                    · 5 de ago. de 2026
+                  </time>
+                </div>
+
+                <button
+                  class="icon-button"
+                  type="button"
+                  aria-label="Opções da publicação"
+                  data-demo
+                >
+                  <span data-icon="more"></span>
+                </button>
+              </div>
+
+              <p class="tw-post-text">
+                Minha foto do céu está no corredor azul!
+              </p>
+
+              <div class="tw-quoted-post">
+                <strong>@colegio.patio</strong>
+
+                <p>
+                  Mostra Fotográfica do 1º ano aberta nesta semana
+                </p>
+
+                <img
+                  class="tw-post-image"
+                  src="../imagens/[MAR-TT-05].jpg"
+                  alt="Cartaz ilustrado da Mostra Fotográfica"
+                  loading="lazy"
+                >
+              </div>
+
+              <p class="tw-post-time">18h02</p>
+
+              <div class="tw-post-actions">
+                <button type="button" aria-label="Responder" data-demo>
+                  <span data-icon="message"></span><span>0</span>
+                </button>
+
+                <button type="button" aria-label="Repostar" data-demo>
+                  <span data-icon="repeat"></span><span>0</span>
+                </button>
+
+                <button
+                  type="button"
+                  aria-label="Curtir"
+                  aria-pressed="false"
+                  data-like
+                >
+                  <span data-icon="heart"></span>
+                  <span data-like-count>0</span>
+                </button>
+
+                <button type="button" aria-label="Visualizações" data-demo>
+                  <span data-icon="chart"></span><span>0</span>
+                </button>
+
+                <button type="button" aria-label="Salvar" data-demo>
+                  <span data-icon="bookmark"></span>
+                </button>
+              </div>
+            </div>
+          </article>
+
+          <!-- MAR-X-03: ANIVERSÁRIO -->
+          <article class="tw-post">
+            <img
+              class="tw-post-avatar"
+              src="../imagens/[MAR-TT-PERFIL].jpg"
+              alt=""
+            >
+
+            <div class="tw-post-body">
+              <div class="tw-post-heading">
+                <div class="tw-post-author">
+                  <strong>Mari</strong>
+                  <span>@MarihQuadra</span>
+                  <time datetime="2026-05-15T10:04">
+                    · 15 de mai. de 2026
+                  </time>
+                </div>
+
+                <button
+                  class="icon-button"
+                  type="button"
+                  aria-label="Opções da publicação"
+                  data-demo
+                >
+                  <span data-icon="more"></span>
+                </button>
+              </div>
+
+              <p class="tw-post-text">
+                Ontem fiz 15 e ainda tem bolo na geladeira
+              </p>
+
+              <p class="tw-post-time">10h04</p>
+
+              <div class="tw-post-actions">
+                <button type="button" aria-label="Responder" data-demo>
+                  <span data-icon="message"></span><span>0</span>
+                </button>
+
+                <button type="button" aria-label="Repostar" data-demo>
+                  <span data-icon="repeat"></span><span>0</span>
+                </button>
+
+                <button
+                  type="button"
+                  aria-label="Curtir"
+                  aria-pressed="false"
+                  data-like
+                >
+                  <span data-icon="heart"></span>
+                  <span data-like-count>0</span>
+                </button>
+
+                <button type="button" aria-label="Visualizações" data-demo>
+                  <span data-icon="chart"></span><span>0</span>
+                </button>
+
+                <button type="button" aria-label="Salvar" data-demo>
+                  <span data-icon="bookmark"></span>
+                </button>
+              </div>
+            </div>
+          </article>
+        </div>
+
+        <!-- MAR-X-04: RESPOSTA À BIA -->
+        <div
+          id="marina-tw-replies"
+          role="tabpanel"
+          aria-labelledby="marina-tw-tab-replies"
+          hidden
+        >
+          <article class="tw-post">
+            <img
+              class="tw-post-avatar"
+              src="../imagens/[MAR-TT-PERFIL].jpg"
+              alt=""
+            >
+
+            <div class="tw-post-body">
+              <p class="tw-context">
+                Em resposta a @bia.azevedo.vc
+              </p>
+
+              <div class="tw-post-heading">
+                <div class="tw-post-author">
+                  <strong>Mari</strong>
+                  <span>@MarihQuadra</span>
+                  <time datetime="2026-08-04T09:08">
+                    · 4 de ago. de 2026
+                  </time>
+                </div>
+
+                <button
+                  class="icon-button"
+                  type="button"
+                  aria-label="Opções da resposta"
+                  data-demo
+                >
+                  <span data-icon="more"></span>
+                </button>
+              </div>
+
+              <div class="tw-quoted-post">
+                <strong>@bia.azevedo.vc</strong>
+                <p>A mostra ficou ótima!</p>
+              </div>
+
+              <p class="tw-post-text">
+                Obrigada, irmã! A mãe tirou mais fotos que eu
+              </p>
+
+              <p class="tw-post-time">09h08</p>
+
+              <div class="tw-post-actions">
+                <button type="button" aria-label="Responder" data-demo>
+                  <span data-icon="message"></span><span>0</span>
+                </button>
+
+                <button type="button" aria-label="Repostar" data-demo>
+                  <span data-icon="repeat"></span><span>0</span>
+                </button>
+
+                <button
+                  type="button"
+                  aria-label="Curtir"
+                  aria-pressed="false"
+                  data-like
+                >
+                  <span data-icon="heart"></span>
+                  <span data-like-count>0</span>
+                </button>
+
+                <button type="button" aria-label="Visualizações" data-demo>
+                  <span data-icon="chart"></span><span>0</span>
+                </button>
+
+                <button type="button" aria-label="Salvar" data-demo>
+                  <span data-icon="bookmark"></span>
+                </button>
+              </div>
+            </div>
+          </article>
+        </div>
+
+        <!-- A IMAGEM DO REPOST APARECE TAMBÉM EM MÍDIA -->
+        <div
+          id="marina-tw-media"
+          class="network-empty"
+          role="tabpanel"
+          aria-labelledby="marina-tw-tab-media"
+          hidden
+        >
+          <span data-icon="image"></span>
+          <h2>Mídia</h2>
+
+          <div class="tw-media-grid">
+            <img
+              src="../imagens/[MAR-TT-05].jpg"
+              alt="Cartaz ilustrado da Mostra Fotográfica"
+            >
+          </div>
+        </div>
+      </section>
+    </main>
+
+    <!-- COLUNA DIREITA -->
+    <aside class="tw-right">
+      <button class="tw-search" type="button" data-demo>
+        <span data-icon="search"></span>
+        Buscar
+      </button>
+
+      <section class="tw-widget">
+        <h2>Talvez você curta</h2>
+
+        <div class="tw-widget-placeholder">
+          <span data-icon="users"></span>
+          <p>Perfis fictícios poderão aparecer aqui.</p>
+        </div>
+      </section>
+
+      <section class="tw-widget">
+        <h2>O que está acontecendo</h2>
+
+        <div class="tw-trend">
+          <span>Simulação · Esporte</span>
+          <strong>Vôlei</strong>
+          <span>Assunto fictício</span>
+        </div>
+
+        <div class="tw-trend">
+          <span>Simulação · Fotografia</span>
+          <strong>Fotos do céu</strong>
+          <span>Assunto fictício</span>
+        </div>
+      </section>
+
+      <footer class="tw-footer">
+        Perfil fictício para simulação educativa.
+        Sem vínculo com o Twitter/X.
+      </footer>
+    </aside>
+  </div>
+
+  <div class="toast" role="status" aria-live="polite"></div>
+</body>
+</html>

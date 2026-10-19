@@ -1,0 +1,656 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+
+  <title>Kyo (@KyoNebula17) / Twitter simulado</title>
+
+  <link rel="stylesheet" href="../css/estilos.css">
+  <script src="../js/interface.js" defer></script>
+</head>
+
+<body class="twitter-page">
+  <a class="skip-link" href="#main-content">
+    Pular para o conteúdo
+  </a>
+
+  <div class="tw-layout">
+
+    <!-- MENU LATERAL -->
+    <aside class="tw-sidebar">
+      <a
+        class="tw-wordmark"
+        href="../index.html"
+        aria-label="Página inicial"
+      >
+        <span data-icon="message"></span>
+        <span class="nav-label">Twitter</span>
+      </a>
+
+      <nav class="tw-navigation" aria-label="Navegação principal">
+        <a class="tw-nav-link" href="../index.html">
+          <span data-icon="home"></span>
+          <span class="nav-label">Página inicial</span>
+        </a>
+
+        <button class="tw-nav-link" type="button" data-demo>
+          <span data-icon="search"></span>
+          <span class="nav-label">Explorar</span>
+        </button>
+
+        <button class="tw-nav-link" type="button" data-demo>
+          <span data-icon="bell"></span>
+          <span class="nav-label">Notificações</span>
+        </button>
+
+        <button class="tw-nav-link" type="button" data-demo>
+          <span data-icon="mail"></span>
+          <span class="nav-label">Mensagens</span>
+        </button>
+
+        <button class="tw-nav-link" type="button" data-demo>
+          <span data-icon="bookmark"></span>
+          <span class="nav-label">Itens salvos</span>
+        </button>
+
+        <button class="tw-nav-link" type="button" data-demo>
+          <span data-icon="users"></span>
+          <span class="nav-label">Comunidades</span>
+        </button>
+
+        <a
+          class="tw-nav-link active"
+          href="#main-content"
+          aria-current="page"
+        >
+          <span data-icon="user"></span>
+          <span class="nav-label">Perfil</span>
+        </a>
+
+        <button class="tw-nav-link" type="button" data-demo>
+          <span data-icon="more"></span>
+          <span class="nav-label">Mais</span>
+        </button>
+      </nav>
+
+      <button class="tw-publish" type="button" data-demo>
+        <span data-icon="plus"></span>
+        <span class="nav-label">Publicar</span>
+      </button>
+
+      <div class="tw-sidebar-note">
+        Ambiente simulado
+      </div>
+    </aside>
+
+    <!-- COLUNA PRINCIPAL -->
+    <main id="main-content" class="tw-main">
+      <header class="tw-topbar">
+        <a
+          class="icon-button"
+          href="../index.html"
+          aria-label="Voltar à seleção de perfis"
+        >
+          <span data-icon="arrow-left"></span>
+        </a>
+
+        <div>
+          <h1>Kyo</h1>
+          <p>5 publicações</p>
+        </div>
+      </header>
+
+      <!-- CAPA TEMPORÁRIA: A PASTA AINDA NÃO TEM IMAGEM DE CAPA -->
+      <div
+        class="tw-cover caio-space-cover"
+        role="img"
+        aria-label="Capa ilustrativa com céu espacial"
+      >
+        <span class="caio-cover-star">✦</span>
+      </div>
+
+      <!-- INFORMAÇÕES DO PERFIL -->
+      <section class="tw-profile" aria-label="Informações do perfil">
+        <div class="tw-profile-toolbar">
+          <img
+            class="tw-avatar"
+            src="../imagens/[CAI-TT-PERFIL].jpg"
+            alt="Capacete azul com estrela amarela"
+          >
+
+          <div class="tw-profile-actions">
+            <button
+              class="icon-button bordered"
+              type="button"
+              aria-label="Mais opções"
+              data-demo
+            >
+              <span data-icon="more"></span>
+            </button>
+
+            <button
+              class="icon-button bordered"
+              type="button"
+              aria-label="Enviar mensagem"
+              data-demo
+            >
+              <span data-icon="mail"></span>
+            </button>
+
+            <button
+              class="button button-dark button-pill"
+              type="button"
+              data-follow
+              aria-pressed="false"
+            >
+              Seguir
+            </button>
+          </div>
+        </div>
+
+        <div class="tw-identity">
+          <h2>Kyo</h2>
+          <p class="muted">@KyoNebula17</p>
+        </div>
+
+        <p class="tw-bio">
+          Rabiscos, jogo em equipe e trilhas sonoras. Vila Cedro.
+        </p>
+
+        <div class="tw-statistics">
+          <span><strong>—</strong> Seguindo</span>
+          <span><strong>—</strong> Seguidores</span>
+        </div>
+
+        <div class="tw-simulation-note">
+          Perfil fictício · Ambiente de simulação
+        </div>
+      </section>
+
+      <!-- ABAS -->
+      <section data-tabs>
+        <div
+          class="tw-tabs"
+          role="tablist"
+          aria-label="Conteúdo do perfil"
+        >
+          <button
+            id="tw-tab-posts"
+            type="button"
+            role="tab"
+            aria-selected="true"
+            aria-controls="tw-posts"
+          >
+            <span>Publicações</span>
+          </button>
+
+          <button
+            id="tw-tab-replies"
+            type="button"
+            role="tab"
+            aria-selected="false"
+            aria-controls="tw-replies"
+            tabindex="-1"
+          >
+            <span>Respostas</span>
+          </button>
+
+          <button
+            id="tw-tab-media"
+            type="button"
+            role="tab"
+            aria-selected="false"
+            aria-controls="tw-media"
+            tabindex="-1"
+          >
+            <span>Mídia</span>
+          </button>
+        </div>
+
+        <!-- PUBLICAÇÕES PRÓPRIAS E REPOST -->
+        <div
+          id="tw-posts"
+          role="tabpanel"
+          aria-labelledby="tw-tab-posts"
+        >
+
+          <!-- CAI-X-01: PUBLICAÇÃO FIXADA -->
+          <article class="tw-post">
+            <img
+              class="tw-post-avatar"
+              src="../imagens/[CAI-TT-PERFIL].jpg"
+              alt=""
+            >
+
+            <div class="tw-post-body">
+              <p class="tw-context">Fixado</p>
+
+              <div class="tw-post-heading">
+                <div class="tw-post-author">
+                  <strong>Kyo</strong>
+                  <span>@KyoNebula17</span>
+                  <time datetime="2026-10-03T18:30">
+                    · 3 de out. de 2026
+                  </time>
+                </div>
+
+                <button
+                  class="icon-button"
+                  type="button"
+                  aria-label="Opções da publicação"
+                  data-demo
+                >
+                  <span data-icon="more"></span>
+                </button>
+              </div>
+
+              <p class="tw-post-text">
+                Finalmente terminei nosso emblema. Kyo na arte,
+                Nebulosa 5 nas partidas. Próxima versão vai ter
+                mais estrelas
+              </p>
+
+              <img
+                class="tw-post-image"
+                src="../imagens/[CAI-TT-01].jpg"
+                alt="Emblema da Nebulosa 5 com capacete azul e estrela amarela"
+                loading="lazy"
+              >
+
+              <p class="tw-post-time">18h30</p>
+
+              <div class="tw-post-actions">
+                <button type="button" aria-label="Responder" data-demo>
+                  <span data-icon="message"></span><span>0</span>
+                </button>
+
+                <button type="button" aria-label="Repostar" data-demo>
+                  <span data-icon="repeat"></span><span>0</span>
+                </button>
+
+                <button
+                  type="button"
+                  aria-label="Curtir"
+                  aria-pressed="false"
+                  data-like
+                >
+                  <span data-icon="heart"></span>
+                  <span data-like-count>0</span>
+                </button>
+
+                <button type="button" aria-label="Visualizações" data-demo>
+                  <span data-icon="chart"></span><span>0</span>
+                </button>
+
+                <button type="button" aria-label="Salvar" data-demo>
+                  <span data-icon="bookmark"></span>
+                </button>
+              </div>
+            </div>
+          </article>
+
+          <!-- CAI-X-02: ROTINA -->
+          <article class="tw-post">
+            <img
+              class="tw-post-avatar"
+              src="../imagens/[CAI-TT-PERFIL].jpg"
+              alt=""
+            >
+
+            <div class="tw-post-body">
+              <div class="tw-post-heading">
+                <div class="tw-post-author">
+                  <strong>Kyo</strong>
+                  <span>@KyoNebula17</span>
+                  <time datetime="2026-10-13T18:15">
+                    · 13 de out. de 2026
+                  </time>
+                </div>
+
+                <button
+                  class="icon-button"
+                  type="button"
+                  aria-label="Opções da publicação"
+                  data-demo
+                >
+                  <span data-icon="more"></span>
+                </button>
+              </div>
+
+              <p class="tw-post-text">
+                Terças e quintas, 20h: nossa hora de jogar
+                Orbital Clash. Hoje vou tentar lembrar de carregar
+                o controle antes
+              </p>
+
+              <p class="tw-post-time">18h15</p>
+
+              <div class="tw-post-actions">
+                <button type="button" aria-label="Responder" data-demo>
+                  <span data-icon="message"></span><span>0</span>
+                </button>
+
+                <button type="button" aria-label="Repostar" data-demo>
+                  <span data-icon="repeat"></span><span>0</span>
+                </button>
+
+                <button
+                  type="button"
+                  aria-label="Curtir"
+                  aria-pressed="false"
+                  data-like
+                >
+                  <span data-icon="heart"></span>
+                  <span data-like-count>0</span>
+                </button>
+
+                <button type="button" aria-label="Visualizações" data-demo>
+                  <span data-icon="chart"></span><span>0</span>
+                </button>
+
+                <button type="button" aria-label="Salvar" data-demo>
+                  <span data-icon="bookmark"></span>
+                </button>
+              </div>
+            </div>
+          </article>
+
+          <!-- CAI-X-05: REPOST COM COMENTÁRIO -->
+          <article class="tw-post">
+            <img
+              class="tw-post-avatar"
+              src="../imagens/[CAI-TT-PERFIL].jpg"
+              alt=""
+            >
+
+            <div class="tw-post-body">
+              <p class="tw-context">Kyo comentou uma publicação</p>
+
+              <div class="tw-post-heading">
+                <div class="tw-post-author">
+                  <strong>Kyo</strong>
+                  <span>@KyoNebula17</span>
+                  <time datetime="2026-10-07T11:25">
+                    · 7 de out. de 2026
+                  </time>
+                </div>
+
+                <button
+                  class="icon-button"
+                  type="button"
+                  aria-label="Opções da publicação"
+                  data-demo
+                >
+                  <span data-icon="more"></span>
+                </button>
+              </div>
+
+              <p class="tw-post-text">
+                A turma da Nebulosa 5 quer passar lá.
+                Gostei do mural quando fui com o pessoal esta semana.
+              </p>
+
+              <div class="tw-quoted-post">
+                <strong>@arena.pixel.nascente</strong>
+
+                <p>
+                  Mostra de jogos da Arena Pixel Nascente
+                  neste sábado. Entrada livre.
+                </p>
+
+                <img
+                  class="tw-post-image"
+                  src="../imagens/[CAI-TT-05].jpg"
+                  alt="Cartão ilustrado do evento da Arena Pixel Nascente"
+                  loading="lazy"
+                >
+              </div>
+
+              <p class="tw-post-time">11h25</p>
+
+              <div class="tw-post-actions">
+                <button type="button" aria-label="Responder" data-demo>
+                  <span data-icon="message"></span><span>0</span>
+                </button>
+
+                <button type="button" aria-label="Repostar" data-demo>
+                  <span data-icon="repeat"></span><span>0</span>
+                </button>
+
+                <button
+                  type="button"
+                  aria-label="Curtir"
+                  aria-pressed="false"
+                  data-like
+                >
+                  <span data-icon="heart"></span>
+                  <span data-like-count>0</span>
+                </button>
+
+                <button type="button" aria-label="Visualizações" data-demo>
+                  <span data-icon="chart"></span><span>0</span>
+                </button>
+
+                <button type="button" aria-label="Salvar" data-demo>
+                  <span data-icon="bookmark"></span>
+                </button>
+              </div>
+            </div>
+          </article>
+
+          <!-- CAI-X-03: ANIVERSÁRIO -->
+          <article class="tw-post">
+            <img
+              class="tw-post-avatar"
+              src="../imagens/[CAI-TT-PERFIL].jpg"
+              alt=""
+            >
+
+            <div class="tw-post-body">
+              <div class="tw-post-heading">
+                <div class="tw-post-author">
+                  <strong>Kyo</strong>
+                  <span>@KyoNebula17</span>
+                  <time datetime="2026-09-19T10:08">
+                    · 19 de set. de 2026
+                  </time>
+                </div>
+
+                <button
+                  class="icon-button"
+                  type="button"
+                  aria-label="Opções da publicação"
+                  data-demo
+                >
+                  <span data-icon="more"></span>
+                </button>
+              </div>
+
+              <p class="tw-post-text">
+                Ontem fiz 17. Melhor parte foi ver a galera
+                reunida e ainda sobrou bolo
+              </p>
+
+              <p class="tw-post-time">10h08</p>
+
+              <div class="tw-post-actions">
+                <button type="button" aria-label="Responder" data-demo>
+                  <span data-icon="message"></span><span>0</span>
+                </button>
+
+                <button type="button" aria-label="Repostar" data-demo>
+                  <span data-icon="repeat"></span><span>0</span>
+                </button>
+
+                <button
+                  type="button"
+                  aria-label="Curtir"
+                  aria-pressed="false"
+                  data-like
+                >
+                  <span data-icon="heart"></span>
+                  <span data-like-count>0</span>
+                </button>
+
+                <button type="button" aria-label="Visualizações" data-demo>
+                  <span data-icon="chart"></span><span>0</span>
+                </button>
+
+                <button type="button" aria-label="Salvar" data-demo>
+                  <span data-icon="bookmark"></span>
+                </button>
+              </div>
+            </div>
+          </article>
+        </div>
+
+        <!-- CAI-X-04: RESPOSTA A DAVI -->
+        <div
+          id="tw-replies"
+          role="tabpanel"
+          aria-labelledby="tw-tab-replies"
+          hidden
+        >
+          <article class="tw-post">
+            <img
+              class="tw-post-avatar"
+              src="../imagens/[CAI-TT-PERFIL].jpg"
+              alt=""
+            >
+
+            <div class="tw-post-body">
+              <p class="tw-context">
+                Em resposta a @davi.moura.vc
+              </p>
+
+              <div class="tw-post-heading">
+                <div class="tw-post-author">
+                  <strong>Kyo</strong>
+                  <span>@KyoNebula17</span>
+                  <time datetime="2026-10-14T12:06">
+                    · 14 de out. de 2026
+                  </time>
+                </div>
+
+                <button
+                  class="icon-button"
+                  type="button"
+                  aria-label="Opções da resposta"
+                  data-demo
+                >
+                  <span data-icon="more"></span>
+                </button>
+              </div>
+
+              <div class="tw-quoted-post">
+                <strong>@davi.moura.vc</strong>
+                <p>Ainda quero revanche naquele jogo.</p>
+              </div>
+
+              <p class="tw-post-text">
+                Combinado, primo! Mas dessa vez o Bruno
+                joga no meu time
+              </p>
+
+              <p class="tw-post-time">12h06</p>
+
+              <div class="tw-post-actions">
+                <button type="button" aria-label="Responder" data-demo>
+                  <span data-icon="message"></span><span>0</span>
+                </button>
+
+                <button type="button" aria-label="Repostar" data-demo>
+                  <span data-icon="repeat"></span><span>0</span>
+                </button>
+
+                <button
+                  type="button"
+                  aria-label="Curtir"
+                  aria-pressed="false"
+                  data-like
+                >
+                  <span data-icon="heart"></span>
+                  <span data-like-count>0</span>
+                </button>
+
+                <button type="button" aria-label="Visualizações" data-demo>
+                  <span data-icon="chart"></span><span>0</span>
+                </button>
+
+                <button type="button" aria-label="Salvar" data-demo>
+                  <span data-icon="bookmark"></span>
+                </button>
+              </div>
+            </div>
+          </article>
+        </div>
+
+        <div
+          id="tw-media"
+          class="network-empty"
+          role="tabpanel"
+          aria-labelledby="tw-tab-media"
+          hidden
+        >
+          <span data-icon="image"></span>
+          <h2>Mídia</h2>
+
+          <div class="tw-media-grid">
+            <img
+              src="../imagens/[CAI-TT-01].jpg"
+              alt="Emblema da Nebulosa 5"
+            >
+
+            <img
+              src="../imagens/[CAI-TT-05].jpg"
+              alt="Cartão do evento da Arena Pixel Nascente"
+            >
+          </div>
+        </div>
+      </section>
+    </main>
+
+    <!-- COLUNA DIREITA -->
+    <aside class="tw-right">
+      <button class="tw-search" type="button" data-demo>
+        <span data-icon="search"></span>
+        Buscar
+      </button>
+
+      <section class="tw-widget">
+        <h2>Talvez você curta</h2>
+
+        <div class="tw-widget-placeholder">
+          <span data-icon="users"></span>
+          <p>Perfis fictícios poderão aparecer aqui.</p>
+        </div>
+      </section>
+
+      <section class="tw-widget">
+        <h2>O que está acontecendo</h2>
+
+        <div class="tw-trend">
+          <span>Simulação · Jogos</span>
+          <strong>Orbital Clash</strong>
+          <span>Assunto fictício</span>
+        </div>
+
+        <div class="tw-trend">
+          <span>Simulação · Arte</span>
+          <strong>Desenho digital</strong>
+          <span>Assunto fictício</span>
+        </div>
+      </section>
+
+      <footer class="tw-footer">
+        Perfil fictício para simulação educativa.
+        Sem vínculo com o Twitter/X.
+      </footer>
+    </aside>
+
+  </div>
+
+  <div class="toast" role="status" aria-live="polite"></div>
+</body>
+</html>
