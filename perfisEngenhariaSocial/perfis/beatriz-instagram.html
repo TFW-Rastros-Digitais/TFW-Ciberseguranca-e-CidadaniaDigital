@@ -4,19 +4,22 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
 
-  <!-- Troque o título na cópia de cada perfil. -->
-  <title>[Usuário] • Instagram simulado</title>
+  <title>Beatriz Campos (@bia.campos.vc) • Instagram simulado</title>
 
   <link rel="stylesheet" href="../css/estilos.css">
   <script src="../js/interface.js" defer></script>
 </head>
 
 <body class="instagram-page">
-  <a class="skip-link" href="#main-content">Pular para o conteúdo</a>
+  <a class="skip-link" href="#main-content">
+    Pular para o conteúdo
+  </a>
 
   <!-- MENU LATERAL -->
   <aside class="ig-sidebar">
-    <a class="ig-wordmark" href="../index.html">Instagram</a>
+    <a class="ig-wordmark" href="../index.html">
+      Instagram
+    </a>
 
     <nav class="ig-navigation" aria-label="Navegação principal">
       <a class="side-link" href="../index.html">
@@ -54,8 +57,16 @@
         <span class="nav-label">Criar</span>
       </button>
 
-      <a class="side-link active" href="#main-content" aria-current="page">
-        <span class="mini-avatar placeholder-avatar"></span>
+      <a
+        class="side-link active"
+        href="#main-content"
+        aria-current="page"
+      >
+        <img
+          class="mini-avatar"
+          src="../imagens/[BEA-IG-PERFIL].jpeg"
+          alt=""
+        >
         <span class="nav-label">Perfil</span>
       </a>
     </nav>
@@ -66,35 +77,35 @@
         <span class="nav-label">Mais</span>
       </button>
 
-      <span class="sidebar-note">AMBIENTE SIMULADO</span>
+      <span class="sidebar-note">
+        AMBIENTE SIMULADO
+      </span>
     </div>
   </aside>
 
-  <!-- CONTEÚDO DO PERFIL -->
+  <!-- PERFIL -->
   <main id="main-content" class="ig-main">
     <div class="ig-content">
 
       <div class="simulation-strip">
-        <span>Perfil simulado</span>
+        <span>Perfil fictício · Simulação educativa</span>
         <a href="../index.html">Trocar de perfil</a>
       </div>
 
       <header class="ig-profile-header">
         <div class="ig-avatar-column">
           <div class="ig-avatar-ring">
-            <div
-              class="ig-avatar placeholder-avatar"
-              role="img"
-              aria-label="Espaço para a foto do perfil"
+            <img
+              class="ig-avatar"
+              src="../imagens/[BEA-IG-PERFIL].jpeg"
+              alt="Violão lilás ilustrado com estrela branca"
             >
-              <span data-icon="user"></span>
-            </div>
           </div>
         </div>
 
         <div class="ig-profile-information">
           <div class="ig-profile-top">
-            <h1>[nome_de_usuario]</h1>
+            <h1>bia.campos.vc</h1>
 
             <div class="ig-profile-actions">
               <button
@@ -126,75 +137,85 @@
           </div>
 
           <ul class="ig-statistics">
-            <li><strong>[0]</strong> publicações</li>
-            <li><strong>[0]</strong> seguidores</li>
-            <li><strong>[0]</strong> seguindo</li>
+            <li><strong>3</strong> publicações</li>
+            <li><strong>—</strong> seguidores</li>
+            <li><strong>—</strong> seguindo</li>
           </ul>
 
           <div class="ig-biography">
-            <h2>[Nome do perfil]</h2>
-            <p class="muted">[Categoria do perfil]</p>
-            <p>[Primeira linha da biografia]</p>
-            <p>[Segunda linha da biografia]</p>
+            <h2>Beatriz Campos</h2>
 
-            <!-- Substitua por um link real, se houver. -->
-            <span class="ig-bio-link">[Link ou informação complementar]</span>
+            <p>
+              18 | música | desenhos no caderno |
+              sempre ouvindo algo novo
+            </p>
           </div>
         </div>
       </header>
 
       <!-- DESTAQUES -->
       <section class="ig-highlights" aria-label="Destaques">
-        <button class="highlight" type="button" data-demo>
+        <button
+          class="highlight"
+          type="button"
+          data-open-dialog="beatriz-destaque-passeios"
+        >
           <span class="highlight-ring">
             <span class="highlight-cover">
-              <span data-icon="image"></span>
+              <img
+                src="../imagens/[BEA-IG-ST01].jpg"
+                alt=""
+              >
             </span>
           </span>
-          <span>[Destaque]</span>
+
+          <span>Passeios</span>
         </button>
 
-        <button class="highlight" type="button" data-demo>
+        <button
+          class="highlight"
+          type="button"
+          data-open-dialog="beatriz-destaque-ensaios"
+        >
           <span class="highlight-ring">
             <span class="highlight-cover">
-              <span data-icon="image"></span>
+              <img
+                src="../imagens/[BEA-IG-ST02].jpg"
+                alt=""
+              >
             </span>
           </span>
-          <span>[Destaque]</span>
-        </button>
 
-        <button class="highlight" type="button" data-demo>
-          <span class="highlight-ring">
-            <span class="highlight-cover">
-              <span data-icon="image"></span>
-            </span>
-          </span>
-          <span>[Destaque]</span>
+          <span>Ensaios</span>
         </button>
       </section>
 
-      <!-- ABAS E PUBLICAÇÕES -->
+      <!-- ABAS E GRADE -->
       <section class="ig-publications" data-tabs>
-        <div class="ig-tabs" role="tablist" aria-label="Conteúdo do perfil">
+        <div
+          class="ig-tabs"
+          role="tablist"
+          aria-label="Conteúdo do perfil"
+        >
           <button
-            id="ig-tab-posts"
+            id="beatriz-ig-tab-posts"
             class="ig-tab"
             type="button"
             role="tab"
             aria-selected="true"
-            aria-controls="ig-posts"
+            aria-controls="beatriz-ig-posts"
           >
             <span data-icon="grid"></span>
             PUBLICAÇÕES
           </button>
 
           <button
-            id="ig-tab-reels"
+            id="beatriz-ig-tab-reels"
             class="ig-tab"
             type="button"
             role="tab"
             aria-selected="false"
-            aria-controls="ig-reels"
+            aria-controls="beatriz-ig-reels"
             tabindex="-1"
           >
             <span data-icon="video"></span>
@@ -202,12 +223,12 @@
           </button>
 
           <button
-            id="ig-tab-tagged"
+            id="beatriz-ig-tab-tagged"
             class="ig-tab"
             type="button"
             role="tab"
             aria-selected="false"
-            aria-controls="ig-tagged"
+            aria-controls="beatriz-ig-tagged"
             tabindex="-1"
           >
             <span data-icon="user"></span>
@@ -216,79 +237,414 @@
         </div>
 
         <div
-          id="ig-posts"
+          id="beatriz-ig-posts"
           role="tabpanel"
-          aria-labelledby="ig-tab-posts"
+          aria-labelledby="beatriz-ig-tab-posts"
         >
           <div class="ig-grid">
-            <!--
-              Estes são espaços de composição.
-              Substitua cada bloco por uma imagem de publicação.
-            -->
 
-            <div class="ig-post-placeholder">
-              <span data-icon="image"></span>
-              <span>Publicação 01</span>
-            </div>
+            <!-- BEA-IG-03: MAIS RECENTE -->
+            <button
+              class="ig-grid-button"
+              type="button"
+              data-open-dialog="beatriz-post-ig-03"
+              aria-label="Abrir publicação de 4 de outubro de 2026"
+            >
+              <img
+                class="ig-photo"
+                src="../imagens/[BEA-IG-03].jpg"
+                alt="Beatriz com violão e o gato Pingo"
+                loading="lazy"
+              >
+            </button>
 
-            <div class="ig-post-placeholder">
-              <span data-icon="image"></span>
-              <span>Publicação 02</span>
-            </div>
+            <!-- BEA-IG-02 -->
+            <button
+              class="ig-grid-button"
+              type="button"
+              data-open-dialog="beatriz-post-ig-02"
+              aria-label="Abrir publicação de 29 de agosto de 2026"
+            >
+              <img
+                class="ig-photo"
+                src="../imagens/[BEA-IG-02].jpg"
+                alt="Cartaz da Oficina de Som e crachá de Produção Cultural — 1º período"
+                loading="lazy"
+              >
+            </button>
 
-            <div class="ig-post-placeholder">
-              <span data-icon="image"></span>
-              <span>Publicação 03</span>
-            </div>
+            <!-- BEA-IG-01: MAIS ANTIGA -->
+            <button
+              class="ig-grid-button"
+              type="button"
+              data-open-dialog="beatriz-post-ig-01"
+              aria-label="Abrir publicação de 21 de junho de 2026"
+            >
+              <img
+                class="ig-photo"
+                src="../imagens/[BEA-IG-01].jpg"
+                alt="Beatriz e Clara em comemoração com bolo de 18 anos"
+                loading="lazy"
+              >
+            </button>
 
-            <div class="ig-post-placeholder">
-              <span data-icon="image"></span>
-              <span>Publicação 04</span>
-            </div>
-
-            <div class="ig-post-placeholder">
-              <span data-icon="image"></span>
-              <span>Publicação 05</span>
-            </div>
-
-            <div class="ig-post-placeholder">
-              <span data-icon="image"></span>
-              <span>Publicação 06</span>
-            </div>
           </div>
         </div>
 
         <div
-          id="ig-reels"
+          id="beatriz-ig-reels"
           class="network-empty"
           role="tabpanel"
-          aria-labelledby="ig-tab-reels"
+          aria-labelledby="beatriz-ig-tab-reels"
           hidden
         >
           <span data-icon="video"></span>
-          <h2>Espaço para reels</h2>
-          <p>Adicione os vídeos deste perfil posteriormente.</p>
+          <h2>Nenhum reel</h2>
         </div>
 
         <div
-          id="ig-tagged"
+          id="beatriz-ig-tagged"
           class="network-empty"
           role="tabpanel"
-          aria-labelledby="ig-tab-tagged"
+          aria-labelledby="beatriz-ig-tab-tagged"
           hidden
         >
           <span data-icon="user"></span>
-          <h2>Publicações marcadas</h2>
-          <p>Adicione este conteúdo quando preparar o perfil.</p>
+          <h2>Nenhuma publicação marcada</h2>
         </div>
       </section>
 
       <footer class="ig-footer">
-        Interface para simulação local · Sem vínculo com o Instagram
+        Perfil fictício para simulação educativa.
+        Sem vínculo com o Instagram.
       </footer>
     </div>
   </main>
 
+  <!-- PUBLICAÇÃO BEA-IG-01: ANIVERSÁRIO -->
+  <dialog
+    id="beatriz-post-ig-01"
+    class="publication-dialog"
+    aria-labelledby="beatriz-post-ig-01-title"
+  >
+    <div class="publication-dialog-top">
+      <h2 id="beatriz-post-ig-01-title">
+        Publicação de bia.campos.vc
+      </h2>
+
+      <form method="dialog">
+        <button
+          class="icon-button"
+          type="submit"
+          aria-label="Fechar publicação"
+          autofocus
+        >
+          ✕
+        </button>
+      </form>
+    </div>
+
+    <div class="publication-dialog-layout">
+      <img
+        class="publication-dialog-image"
+        src="../imagens/[BEA-IG-01].jpg"
+        alt="Beatriz e Clara em ilustração com bolo de 18 anos"
+      >
+
+      <div class="publication-dialog-content">
+        <p class="publication-caption">
+          <strong>bia.campos.vc</strong>
+          Dezoito e uma playlist enorme para comemorar
+        </p>
+
+        <time datetime="2026-06-21T18:55">
+          21 de junho de 2026 às 18h55
+        </time>
+
+        <h3>Comentários</h3>
+
+        <ul class="publication-comments">
+          <li>
+            <strong>@rosa.campos.vc</strong>
+            Feliz aniversário, filha
+          </li>
+
+          <li>
+            <strong>@tomas.campos.vc</strong>
+            Parabéns, irmã
+          </li>
+
+          <li>
+            <strong>@clara.mello.vc</strong>
+            A playlist foi minha contribuição!
+          </li>
+        </ul>
+      </div>
+    </div>
+  </dialog>
+
+  <!-- PUBLICAÇÃO BEA-IG-02: OFICINA -->
+  <dialog
+    id="beatriz-post-ig-02"
+    class="publication-dialog"
+    aria-labelledby="beatriz-post-ig-02-title"
+  >
+    <div class="publication-dialog-top">
+      <h2 id="beatriz-post-ig-02-title">
+        Publicação de bia.campos.vc
+      </h2>
+
+      <form method="dialog">
+        <button
+          class="icon-button"
+          type="submit"
+          aria-label="Fechar publicação"
+          autofocus
+        >
+          ✕
+        </button>
+      </form>
+    </div>
+
+    <div class="publication-dialog-layout">
+      <img
+        class="publication-dialog-image"
+        src="../imagens/[BEA-IG-02].jpg"
+        alt="Cartaz da Oficina de Som da Escola Livre das Artes do Vale e crachá de Produção Cultural — 1º período"
+      >
+
+      <div class="publication-dialog-content">
+        <p class="publication-caption">
+          <strong>bia.campos.vc</strong>
+          Primeira oficina concluída com a Aline.
+          Aprendi mais sobre gravação do que esperava.
+        </p>
+
+        <time datetime="2026-08-29T16:05">
+          29 de agosto de 2026 às 16h05
+        </time>
+
+        <h3>Comentários</h3>
+
+        <ul class="publication-comments">
+          <li>
+            <strong>@aline.pires.vc</strong>
+            Dupla para a próxima também
+          </li>
+
+          <li>
+            <strong>@clara.mello.vc</strong>
+            Quero ouvir o resultado
+          </li>
+
+          <li>
+            <strong>@tomas.campos.vc</strong>
+            O violão ficou bom na gravação?
+          </li>
+        </ul>
+      </div>
+    </div>
+  </dialog>
+
+  <!-- PUBLICAÇÃO BEA-IG-03: PINGO -->
+  <dialog
+    id="beatriz-post-ig-03"
+    class="publication-dialog"
+    aria-labelledby="beatriz-post-ig-03-title"
+  >
+    <div class="publication-dialog-top">
+      <h2 id="beatriz-post-ig-03-title">
+        Publicação de bia.campos.vc
+      </h2>
+
+      <form method="dialog">
+        <button
+          class="icon-button"
+          type="submit"
+          aria-label="Fechar publicação"
+          autofocus
+        >
+          ✕
+        </button>
+      </form>
+    </div>
+
+    <div class="publication-dialog-layout">
+      <img
+        class="publication-dialog-image"
+        src="../imagens/[BEA-IG-03].jpg"
+        alt="Beatriz com violão e gato identificado como Pingo"
+      >
+
+      <div class="publication-dialog-content">
+        <p class="publication-caption">
+          <strong>bia.campos.vc</strong>
+          Pingo resolveu acompanhar a música hoje
+        </p>
+
+        <time datetime="2026-10-04T11:20">
+          4 de outubro de 2026 às 11h20
+        </time>
+
+        <h3>Comentários</h3>
+
+        <ul class="publication-comments">
+          <li>
+            <strong>@rosa.campos.vc</strong>
+            Ele gosta quando você toca
+          </li>
+
+          <li>
+            <strong>@clara.mello.vc</strong>
+            O dueto do ano
+          </li>
+
+          <li>
+            <strong>@aline.pires.vc</strong>
+            Cadê o vídeo?
+          </li>
+        </ul>
+      </div>
+    </div>
+  </dialog>
+
+  <!-- DESTAQUE: PASSEIOS -->
+  <dialog
+    id="beatriz-destaque-passeios"
+    class="publication-dialog"
+    aria-labelledby="beatriz-destaque-passeios-title"
+  >
+    <div class="publication-dialog-top">
+      <h2 id="beatriz-destaque-passeios-title">
+        Passeios
+      </h2>
+
+      <form method="dialog">
+        <button
+          class="icon-button"
+          type="submit"
+          aria-label="Fechar destaque"
+          autofocus
+        >
+          ✕
+        </button>
+      </form>
+    </div>
+
+    <div class="story-list">
+      <article class="story-item">
+        <img
+          src="../imagens/[BEA-IG-ST01].jpg"
+          alt="Placa ilustrada da Casa de Cultura do Lago"
+        >
+
+        <p class="story-location">
+          Jardim do Lago · Vila Cedro
+        </p>
+
+        <p>
+          Cheguei para assistir à oficina.
+        </p>
+
+        <time datetime="2026-09-05T13:30">
+          5 de setembro de 2026 às 13h30
+        </time>
+      </article>
+
+      <article class="story-item">
+        <img
+          src="../imagens/[BEA-IG-ST03].jpg"
+          alt="Coreto ilustrado da Praça das Lanternas"
+        >
+
+        <p class="story-location">
+          Vila Cedro
+        </p>
+
+        <p>
+          Vim ouvir música com a Clara.
+        </p>
+
+        <time datetime="2026-09-26T17:14">
+          26 de setembro de 2026 às 17h14
+        </time>
+      </article>
+    </div>
+  </dialog>
+
+  <!-- DESTAQUE: ENSAIOS -->
+  <dialog
+    id="beatriz-destaque-ensaios"
+    class="publication-dialog"
+    aria-labelledby="beatriz-destaque-ensaios-title"
+  >
+    <div class="publication-dialog-top">
+      <h2 id="beatriz-destaque-ensaios-title">
+        Ensaios
+      </h2>
+
+      <form method="dialog">
+        <button
+          class="icon-button"
+          type="submit"
+          aria-label="Fechar destaque"
+          autofocus
+        >
+          ✕
+        </button>
+      </form>
+    </div>
+
+    <div class="story-list">
+      <article class="story-item">
+        <img
+          src="../imagens/[BEA-IG-ST02].jpg"
+          alt="Violão e caderno"
+        >
+
+        <p>
+          Sábado de ensaio às 14h.
+        </p>
+
+        <time datetime="2026-09-12T13:52">
+          12 de setembro de 2026 às 13h52
+        </time>
+      </article>
+
+      <article class="story-item">
+        <img
+          src="../imagens/[BEA-IG-ST04].jpg"
+          alt="Palhetas e folha de acordes fictícia"
+        >
+
+        <p>
+          Outro sábado, mais um ensaio às 14h.
+        </p>
+
+        <time datetime="2026-10-10T13:48">
+          10 de outubro de 2026 às 13h48
+        </time>
+      </article>
+    </div>
+  </dialog>
+
   <div class="toast" role="status" aria-live="polite"></div>
+
+  <!-- Abre as publicações e os destaques -->
+  <script>
+    document
+      .querySelectorAll("[data-open-dialog]")
+      .forEach((button) => {
+        button.addEventListener("click", () => {
+          const dialog = document.getElementById(
+            button.dataset.openDialog
+          );
+
+          if (dialog instanceof HTMLDialogElement) {
+            dialog.showModal();
+          }
+        });
+      });
+  </script>
 </body>
 </html>
