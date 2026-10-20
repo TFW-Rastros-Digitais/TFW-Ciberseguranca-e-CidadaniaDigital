@@ -1904,3 +1904,92 @@ img.tw-cover {
 .marina-cover-ball::after {
   transform: rotate(65deg) scaleX(0.45);
 }
+
+/* Capa temporária do Twitter da Júlia */
+
+.julia-cover {
+  position: relative;
+  overflow: hidden;
+  background:
+    linear-gradient(
+      35deg,
+      transparent 39%,
+      rgb(255 255 255 / 22%) 40%,
+      rgb(255 255 255 / 22%) 42%,
+      transparent 43%
+    ),
+    linear-gradient(135deg, #16473d, #347e69 55%, #8ec4a5);
+}
+
+.julia-cover-letter {
+  position: absolute;
+  color: rgb(255 255 255 / 70%);
+  font-family: Georgia, serif;
+  font-weight: 700;
+  line-height: 1;
+}
+
+.julia-cover-letter-a {
+  top: 7%;
+  left: 24%;
+  font-size: clamp(75px, 13vw, 150px);
+  transform: rotate(-13deg);
+}
+
+.julia-cover-letter-j {
+  right: 19%;
+  bottom: -20%;
+  font-size: clamp(100px, 17vw, 190px);
+  transform: rotate(10deg);
+}
+
+.julia-cover-circle {
+  position: absolute;
+  top: 20%;
+  right: 34%;
+  width: clamp(65px, 9vw, 120px);
+  height: clamp(65px, 9vw, 120px);
+  border: 7px solid rgb(235 224 178 / 70%);
+  border-radius: 50%;
+}
+
+/* Capa temporária do Twitter do Rafael */
+
+.rafael-cover {
+  position: relative;
+  overflow: hidden;
+  background:
+    linear-gradient(
+      to bottom,
+      transparent 59%,
+      rgb(255 255 255 / 75%) 60%,
+      rgb(255 255 255 / 75%) 62%,
+      transparent 63%
+    ),
+    linear-gradient(135deg, #123658, #286898 55%, #66acd1);
+}
+
+.rafael-cover::before,
+.rafael-cover::after,
+.rafael-track-line {
+  position: absolute;
+  left: -10%;
+  width: 120%;
+  height: 55%;
+  border: 3px solid rgb(255 255 255 / 70%);
+  border-radius: 50%;
+  content: "";
+  transform: rotate(-12deg);
+}
+
+.rafael-cover::before {
+  top: 38%;
+}
+
+.rafael-cover::after {
+  top: 58%;
+}
+
+.rafael-track-line {
+  top: 78%;
+}

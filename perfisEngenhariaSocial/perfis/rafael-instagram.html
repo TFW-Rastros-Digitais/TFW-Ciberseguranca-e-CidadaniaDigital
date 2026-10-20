@@ -1,0 +1,649 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+
+  <title>Rafael Almeida (@rafa.almeida.vc) • Instagram simulado</title>
+
+  <link rel="stylesheet" href="../css/estilos.css">
+  <script src="../js/interface.js" defer></script>
+</head>
+
+<body class="instagram-page">
+  <a class="skip-link" href="#main-content">
+    Pular para o conteúdo
+  </a>
+
+  <!-- MENU LATERAL -->
+  <aside class="ig-sidebar">
+    <a class="ig-wordmark" href="../index.html">
+      Instagram
+    </a>
+
+    <nav class="ig-navigation" aria-label="Navegação principal">
+      <a class="side-link" href="../index.html">
+        <span data-icon="home"></span>
+        <span class="nav-label">Página inicial</span>
+      </a>
+
+      <button class="side-link" type="button" data-demo>
+        <span data-icon="search"></span>
+        <span class="nav-label">Pesquisa</span>
+      </button>
+
+      <button class="side-link" type="button" data-demo>
+        <span data-icon="compass"></span>
+        <span class="nav-label">Explorar</span>
+      </button>
+
+      <button class="side-link" type="button" data-demo>
+        <span data-icon="video"></span>
+        <span class="nav-label">Reels</span>
+      </button>
+
+      <button class="side-link" type="button" data-demo>
+        <span data-icon="message"></span>
+        <span class="nav-label">Mensagens</span>
+      </button>
+
+      <button class="side-link" type="button" data-demo>
+        <span data-icon="heart"></span>
+        <span class="nav-label">Notificações</span>
+      </button>
+
+      <button class="side-link" type="button" data-demo>
+        <span data-icon="plus"></span>
+        <span class="nav-label">Criar</span>
+      </button>
+
+      <a
+        class="side-link active"
+        href="#main-content"
+        aria-current="page"
+      >
+        <img
+          class="mini-avatar"
+          src="../imagens/[RAF-IG-PERFIL].jpg"
+          alt=""
+        >
+        <span class="nav-label">Perfil</span>
+      </a>
+    </nav>
+
+    <div class="ig-sidebar-bottom">
+      <button class="side-link" type="button" data-demo>
+        <span data-icon="menu"></span>
+        <span class="nav-label">Mais</span>
+      </button>
+
+      <span class="sidebar-note">
+        AMBIENTE SIMULADO
+      </span>
+    </div>
+  </aside>
+
+  <!-- PERFIL -->
+  <main id="main-content" class="ig-main">
+    <div class="ig-content">
+
+      <div class="simulation-strip">
+        <span>Perfil fictício · Simulação educativa</span>
+        <a href="../index.html">Trocar de perfil</a>
+      </div>
+
+      <header class="ig-profile-header">
+        <div class="ig-avatar-column">
+          <div class="ig-avatar-ring">
+            <img
+              class="ig-avatar"
+              src="../imagens/[RAF-IG-PERFIL].jpg"
+              alt="Tênis azul ilustrado com o número 7"
+            >
+          </div>
+        </div>
+
+        <div class="ig-profile-information">
+          <div class="ig-profile-top">
+            <h1>rafa.almeida.vc</h1>
+
+            <div class="ig-profile-actions">
+              <button
+                class="button button-blue button-small"
+                type="button"
+                data-follow
+                aria-pressed="false"
+              >
+                Seguir
+              </button>
+
+              <button
+                class="button button-soft button-small"
+                type="button"
+                data-demo
+              >
+                Enviar mensagem
+              </button>
+
+              <button
+                class="icon-button"
+                type="button"
+                aria-label="Mais opções"
+                data-demo
+              >
+                <span data-icon="more"></span>
+              </button>
+            </div>
+          </div>
+
+          <ul class="ig-statistics">
+            <li><strong>3</strong> publicações</li>
+            <li><strong>—</strong> seguidores</li>
+            <li><strong>—</strong> seguindo</li>
+          </ul>
+
+          <div class="ig-biography">
+            <h2>Rafael Almeida</h2>
+
+            <p>
+              20 | corrida | futsal | um treino de cada vez
+            </p>
+          </div>
+        </div>
+      </header>
+
+      <!-- DESTAQUES -->
+      <section class="ig-highlights" aria-label="Destaques">
+        <button
+          class="highlight"
+          type="button"
+          data-open-dialog="rafael-destaque-locais"
+        >
+          <span class="highlight-ring">
+            <span class="highlight-cover">
+              <img
+                src="../imagens/[RAF-IG-ST01].jpg"
+                alt=""
+              >
+            </span>
+          </span>
+
+          <span>Locais</span>
+        </button>
+
+        <button
+          class="highlight"
+          type="button"
+          data-open-dialog="rafael-destaque-treino"
+        >
+          <span class="highlight-ring">
+            <span class="highlight-cover">
+              <img
+                src="../imagens/[RAF-IG-ST02].jpg"
+                alt=""
+              >
+            </span>
+          </span>
+
+          <span>Treino</span>
+        </button>
+      </section>
+
+      <!-- ABAS E GRADE -->
+      <section class="ig-publications" data-tabs>
+        <div
+          class="ig-tabs"
+          role="tablist"
+          aria-label="Conteúdo do perfil"
+        >
+          <button
+            id="rafael-ig-tab-posts"
+            class="ig-tab"
+            type="button"
+            role="tab"
+            aria-selected="true"
+            aria-controls="rafael-ig-posts"
+          >
+            <span data-icon="grid"></span>
+            PUBLICAÇÕES
+          </button>
+
+          <button
+            id="rafael-ig-tab-reels"
+            class="ig-tab"
+            type="button"
+            role="tab"
+            aria-selected="false"
+            aria-controls="rafael-ig-reels"
+            tabindex="-1"
+          >
+            <span data-icon="video"></span>
+            REELS
+          </button>
+
+          <button
+            id="rafael-ig-tab-tagged"
+            class="ig-tab"
+            type="button"
+            role="tab"
+            aria-selected="false"
+            aria-controls="rafael-ig-tagged"
+            tabindex="-1"
+          >
+            <span data-icon="user"></span>
+            MARCADOS
+          </button>
+        </div>
+
+        <div
+          id="rafael-ig-posts"
+          role="tabpanel"
+          aria-labelledby="rafael-ig-tab-posts"
+        >
+          <div class="ig-grid">
+
+            <!-- RAF-IG-03: MAIS RECENTE -->
+            <button
+              class="ig-grid-button"
+              type="button"
+              data-open-dialog="rafael-post-ig-03"
+              aria-label="Abrir publicação de 4 de outubro de 2026"
+            >
+              <img
+                class="ig-photo"
+                src="../imagens/[RAF-IG-03].jpg"
+                alt="Rafael caminhando com Henrique e a cadela Nuvem"
+                loading="lazy"
+              >
+            </button>
+
+            <!-- RAF-IG-02 -->
+            <button
+              class="ig-grid-button"
+              type="button"
+              data-open-dialog="rafael-post-ig-02"
+              aria-label="Abrir publicação de 18 de agosto de 2026"
+            >
+              <img
+                class="ig-photo"
+                src="../imagens/[RAF-IG-02].jpg"
+                alt="Camiseta de Educação Física da Faculdade Horizonte Sul e cartaz do Festival de Futsal"
+                loading="lazy"
+              >
+            </button>
+
+            <!-- RAF-IG-01: MAIS ANTIGA -->
+            <button
+              class="ig-grid-button"
+              type="button"
+              data-open-dialog="rafael-post-ig-01"
+              aria-label="Abrir publicação de 3 de fevereiro de 2026"
+            >
+              <img
+                class="ig-photo"
+                src="../imagens/[RAF-IG-01].jpg"
+                alt="Comemoração com bolo de 20 anos"
+                loading="lazy"
+              >
+            </button>
+
+          </div>
+        </div>
+
+        <div
+          id="rafael-ig-reels"
+          class="network-empty"
+          role="tabpanel"
+          aria-labelledby="rafael-ig-tab-reels"
+          hidden
+        >
+          <span data-icon="video"></span>
+          <h2>Nenhum reel</h2>
+        </div>
+
+        <div
+          id="rafael-ig-tagged"
+          class="network-empty"
+          role="tabpanel"
+          aria-labelledby="rafael-ig-tab-tagged"
+          hidden
+        >
+          <span data-icon="user"></span>
+          <h2>Nenhuma publicação marcada</h2>
+        </div>
+      </section>
+
+      <footer class="ig-footer">
+        Perfil fictício para simulação educativa.
+        Sem vínculo com o Instagram.
+      </footer>
+    </div>
+  </main>
+
+  <!-- PUBLICAÇÃO RAF-IG-01: ANIVERSÁRIO -->
+  <dialog
+    id="rafael-post-ig-01"
+    class="publication-dialog"
+    aria-labelledby="rafael-post-ig-01-title"
+  >
+    <div class="publication-dialog-top">
+      <h2 id="rafael-post-ig-01-title">
+        Publicação de rafa.almeida.vc
+      </h2>
+
+      <form method="dialog">
+        <button
+          class="icon-button"
+          type="submit"
+          aria-label="Fechar publicação"
+          autofocus
+        >
+          ✕
+        </button>
+      </form>
+    </div>
+
+    <div class="publication-dialog-layout">
+      <img
+        class="publication-dialog-image"
+        src="../imagens/[RAF-IG-01].jpg"
+        alt="Rafael e duas pessoas junto a um bolo de 20 anos"
+      >
+
+      <div class="publication-dialog-content">
+        <p class="publication-caption">
+          <strong>rafa.almeida.vc</strong>
+          Vinte! Obrigado pela surpresa depois do treino.
+        </p>
+
+        <time datetime="2026-02-03T20:10">
+          3 de fevereiro de 2026 às 20h10
+        </time>
+
+        <h3>Comentários</h3>
+
+        <ul class="publication-comments">
+          <li>
+            <strong>@dora.almeida.vc</strong>
+            Feliz aniversário, filho
+          </li>
+
+          <li>
+            <strong>@henrique.almeida.vc</strong>
+            Parabéns, irmão
+          </li>
+
+          <li>
+            <strong>@mila.torres.vc</strong>
+            A surpresa deu certo!
+          </li>
+        </ul>
+      </div>
+    </div>
+  </dialog>
+
+  <!-- PUBLICAÇÃO RAF-IG-02: FESTIVAL DE FUTSAL -->
+  <dialog
+    id="rafael-post-ig-02"
+    class="publication-dialog"
+    aria-labelledby="rafael-post-ig-02-title"
+  >
+    <div class="publication-dialog-top">
+      <h2 id="rafael-post-ig-02-title">
+        Publicação de rafa.almeida.vc
+      </h2>
+
+      <form method="dialog">
+        <button
+          class="icon-button"
+          type="submit"
+          aria-label="Fechar publicação"
+          autofocus
+        >
+          ✕
+        </button>
+      </form>
+    </div>
+
+    <div class="publication-dialog-layout">
+      <img
+        class="publication-dialog-image"
+        src="../imagens/[RAF-IG-02].jpg"
+        alt="Camiseta da Faculdade Horizonte Sul e cartaz Festival de Futsal — 3º período; Caetano segura uma bola"
+      >
+
+      <div class="publication-dialog-content">
+        <p class="publication-caption">
+          <strong>rafa.almeida.vc</strong>
+          Nosso grupo conseguiu organizar a rodada.
+          Valeu, Caetano!
+        </p>
+
+        <time datetime="2026-08-18T17:48">
+          18 de agosto de 2026 às 17h48
+        </time>
+
+        <h3>Comentários</h3>
+
+        <ul class="publication-comments">
+          <li>
+            <strong>@caetano.luz.vc</strong>
+            Próxima rodada tem mais
+          </li>
+
+          <li>
+            <strong>@mila.torres.vc</strong>
+            A tabela ficou ótima
+          </li>
+
+          <li>
+            <strong>@henrique.almeida.vc</strong>
+            Vou assistir a próxima
+          </li>
+        </ul>
+      </div>
+    </div>
+  </dialog>
+
+  <!-- PUBLICAÇÃO RAF-IG-03: PASSEIO -->
+  <dialog
+    id="rafael-post-ig-03"
+    class="publication-dialog"
+    aria-labelledby="rafael-post-ig-03-title"
+  >
+    <div class="publication-dialog-top">
+      <h2 id="rafael-post-ig-03-title">
+        Publicação de rafa.almeida.vc
+      </h2>
+
+      <form method="dialog">
+        <button
+          class="icon-button"
+          type="submit"
+          aria-label="Fechar publicação"
+          autofocus
+        >
+          ✕
+        </button>
+      </form>
+    </div>
+
+    <div class="publication-dialog-layout">
+      <img
+        class="publication-dialog-image"
+        src="../imagens/[RAF-IG-03].jpg"
+        alt="Rafael, Henrique e a cadela com coleira identificada como Nuvem"
+      >
+
+      <div class="publication-dialog-content">
+        <p class="publication-caption">
+          <strong>rafa.almeida.vc</strong>
+          Passeio tranquilo com o Henrique e a Nuvem
+        </p>
+
+        <time datetime="2026-10-04T10:22">
+          4 de outubro de 2026 às 10h22
+        </time>
+
+        <h3>Comentários</h3>
+
+        <ul class="publication-comments">
+          <li>
+            <strong>@dora.almeida.vc</strong>
+            Ela dormiu a tarde toda
+          </li>
+
+          <li>
+            <strong>@mila.torres.vc</strong>
+            Nuvem sempre pronta
+          </li>
+
+          <li>
+            <strong>@caetano.luz.vc</strong>
+            Gostei da foto
+          </li>
+        </ul>
+      </div>
+    </div>
+  </dialog>
+
+  <!-- DESTAQUE: LOCAIS -->
+  <dialog
+    id="rafael-destaque-locais"
+    class="publication-dialog"
+    aria-labelledby="rafael-destaque-locais-title"
+  >
+    <div class="publication-dialog-top">
+      <h2 id="rafael-destaque-locais-title">
+        Locais
+      </h2>
+
+      <form method="dialog">
+        <button
+          class="icon-button"
+          type="submit"
+          aria-label="Fechar destaque"
+          autofocus
+        >
+          ✕
+        </button>
+      </form>
+    </div>
+
+    <div class="story-list">
+      <article class="story-item">
+        <img
+          src="../imagens/[RAF-IG-ST01].jpg"
+          alt="Placa ilustrada Pista do Vento"
+        >
+
+        <p class="story-location">
+          Bosque das Pedras · Vila Cedro
+        </p>
+
+        <p>
+          Hoje a pista estava vazia.
+        </p>
+
+        <time datetime="2026-09-07T07:15">
+          7 de setembro de 2026 às 7h15
+        </time>
+      </article>
+
+      <article class="story-item">
+        <img
+          src="../imagens/[RAF-IG-ST03].jpg"
+          alt="Entrada ilustrada do Ginásio Horizonte"
+        >
+
+        <p class="story-location">
+          Vila Cedro
+        </p>
+
+        <p>
+          Vim ver a partida da Mila.
+        </p>
+
+        <time datetime="2026-09-26T15:40">
+          26 de setembro de 2026 às 15h40
+        </time>
+      </article>
+    </div>
+  </dialog>
+
+  <!-- DESTAQUE: TREINO -->
+  <dialog
+    id="rafael-destaque-treino"
+    class="publication-dialog"
+    aria-labelledby="rafael-destaque-treino-title"
+  >
+    <div class="publication-dialog-top">
+      <h2 id="rafael-destaque-treino-title">
+        Treino
+      </h2>
+
+      <form method="dialog">
+        <button
+          class="icon-button"
+          type="submit"
+          aria-label="Fechar destaque"
+          autofocus
+        >
+          ✕
+        </button>
+      </form>
+    </div>
+
+    <div class="story-list">
+      <article class="story-item">
+        <img
+          src="../imagens/[RAF-IG-ST02].jpg"
+          alt="Tênis e garrafa antes do treino"
+        >
+
+        <p>
+          Segunda, aquecimento antes do treino de 6h30.
+        </p>
+
+        <time datetime="2026-09-14T06:22">
+          14 de setembro de 2026 às 6h22
+        </time>
+      </article>
+
+      <article class="story-item">
+        <img
+          src="../imagens/[RAF-IG-ST04].jpg"
+          alt="Cronômetro ilustrado marcando 06:20"
+        >
+
+        <p>
+          Sexta de treino. Começo às 6h30.
+        </p>
+
+        <time datetime="2026-10-09T06:20">
+          9 de outubro de 2026 às 6h20
+        </time>
+      </article>
+    </div>
+  </dialog>
+
+  <div class="toast" role="status" aria-live="polite"></div>
+
+  <!-- Abre as publicações e os destaques -->
+  <script>
+    document
+      .querySelectorAll("[data-open-dialog]")
+      .forEach((button) => {
+        button.addEventListener("click", () => {
+          const dialog = document.getElementById(
+            button.dataset.openDialog
+          );
+
+          if (dialog instanceof HTMLDialogElement) {
+            dialog.showModal();
+          }
+        });
+      });
+  </script>
+</body>
+</html>

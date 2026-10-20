@@ -4,19 +4,22 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
 
-  <!-- Troque o título na cópia de cada perfil. -->
-  <title>[Usuário] • Instagram simulado</title>
+  <title>Júlia Nogueira (@julia.nogueira.vc) • Instagram simulado</title>
 
   <link rel="stylesheet" href="../css/estilos.css">
   <script src="../js/interface.js" defer></script>
 </head>
 
 <body class="instagram-page">
-  <a class="skip-link" href="#main-content">Pular para o conteúdo</a>
+  <a class="skip-link" href="#main-content">
+    Pular para o conteúdo
+  </a>
 
   <!-- MENU LATERAL -->
   <aside class="ig-sidebar">
-    <a class="ig-wordmark" href="../index.html">Instagram</a>
+    <a class="ig-wordmark" href="../index.html">
+      Instagram
+    </a>
 
     <nav class="ig-navigation" aria-label="Navegação principal">
       <a class="side-link" href="../index.html">
@@ -54,8 +57,16 @@
         <span class="nav-label">Criar</span>
       </button>
 
-      <a class="side-link active" href="#main-content" aria-current="page">
-        <span class="mini-avatar placeholder-avatar"></span>
+      <a
+        class="side-link active"
+        href="#main-content"
+        aria-current="page"
+      >
+        <img
+          class="mini-avatar"
+          src="../imagens/[JUL-IG-PERFIL].jpg"
+          alt=""
+        >
         <span class="nav-label">Perfil</span>
       </a>
     </nav>
@@ -66,35 +77,35 @@
         <span class="nav-label">Mais</span>
       </button>
 
-      <span class="sidebar-note">AMBIENTE SIMULADO</span>
+      <span class="sidebar-note">
+        AMBIENTE SIMULADO
+      </span>
     </div>
   </aside>
 
-  <!-- CONTEÚDO DO PERFIL -->
+  <!-- PERFIL -->
   <main id="main-content" class="ig-main">
     <div class="ig-content">
 
       <div class="simulation-strip">
-        <span>Perfil simulado</span>
+        <span>Perfil fictício · Simulação educativa</span>
         <a href="../index.html">Trocar de perfil</a>
       </div>
 
       <header class="ig-profile-header">
         <div class="ig-avatar-column">
           <div class="ig-avatar-ring">
-            <div
-              class="ig-avatar placeholder-avatar"
-              role="img"
-              aria-label="Espaço para a foto do perfil"
+            <img
+              class="ig-avatar"
+              src="../imagens/[JUL-IG-PERFIL].jpg"
+              alt="Ilustração de um caderno verde com lua branca"
             >
-              <span data-icon="user"></span>
-            </div>
           </div>
         </div>
 
         <div class="ig-profile-information">
           <div class="ig-profile-top">
-            <h1>[nome_de_usuario]</h1>
+            <h1>julia.nogueira.vc</h1>
 
             <div class="ig-profile-actions">
               <button
@@ -126,75 +137,85 @@
           </div>
 
           <ul class="ig-statistics">
-            <li><strong>[0]</strong> publicações</li>
-            <li><strong>[0]</strong> seguidores</li>
-            <li><strong>[0]</strong> seguindo</li>
+            <li><strong>3</strong> publicações</li>
+            <li><strong>—</strong> seguidores</li>
+            <li><strong>—</strong> seguindo</li>
           </ul>
 
           <div class="ig-biography">
-            <h2>[Nome do perfil]</h2>
-            <p class="muted">[Categoria do perfil]</p>
-            <p>[Primeira linha da biografia]</p>
-            <p>[Segunda linha da biografia]</p>
+            <h2>Júlia Nogueira</h2>
 
-            <!-- Substitua por um link real, se houver. -->
-            <span class="ig-bio-link">[Link ou informação complementar]</span>
+            <p>
+              19 | desenho e tipografia |
+              coleciono capas de caderno
+            </p>
           </div>
         </div>
       </header>
 
       <!-- DESTAQUES -->
       <section class="ig-highlights" aria-label="Destaques">
-        <button class="highlight" type="button" data-demo>
+        <button
+          class="highlight"
+          type="button"
+          data-open-dialog="julia-destaque-pausas"
+        >
           <span class="highlight-ring">
             <span class="highlight-cover">
-              <span data-icon="image"></span>
+              <img
+                src="../imagens/[JUL-IG-ST01].jpg"
+                alt=""
+              >
             </span>
           </span>
-          <span>[Destaque]</span>
+
+          <span>Pausas</span>
         </button>
 
-        <button class="highlight" type="button" data-demo>
+        <button
+          class="highlight"
+          type="button"
+          data-open-dialog="julia-destaque-aulas"
+        >
           <span class="highlight-ring">
             <span class="highlight-cover">
-              <span data-icon="image"></span>
+              <img
+                src="../imagens/[JUL-IG-ST02].jpg"
+                alt=""
+              >
             </span>
           </span>
-          <span>[Destaque]</span>
-        </button>
 
-        <button class="highlight" type="button" data-demo>
-          <span class="highlight-ring">
-            <span class="highlight-cover">
-              <span data-icon="image"></span>
-            </span>
-          </span>
-          <span>[Destaque]</span>
+          <span>Aulas</span>
         </button>
       </section>
 
-      <!-- ABAS E PUBLICAÇÕES -->
+      <!-- ABAS E GRADE -->
       <section class="ig-publications" data-tabs>
-        <div class="ig-tabs" role="tablist" aria-label="Conteúdo do perfil">
+        <div
+          class="ig-tabs"
+          role="tablist"
+          aria-label="Conteúdo do perfil"
+        >
           <button
-            id="ig-tab-posts"
+            id="julia-ig-tab-posts"
             class="ig-tab"
             type="button"
             role="tab"
             aria-selected="true"
-            aria-controls="ig-posts"
+            aria-controls="julia-ig-posts"
           >
             <span data-icon="grid"></span>
             PUBLICAÇÕES
           </button>
 
           <button
-            id="ig-tab-reels"
+            id="julia-ig-tab-reels"
             class="ig-tab"
             type="button"
             role="tab"
             aria-selected="false"
-            aria-controls="ig-reels"
+            aria-controls="julia-ig-reels"
             tabindex="-1"
           >
             <span data-icon="video"></span>
@@ -202,12 +223,12 @@
           </button>
 
           <button
-            id="ig-tab-tagged"
+            id="julia-ig-tab-tagged"
             class="ig-tab"
             type="button"
             role="tab"
             aria-selected="false"
-            aria-controls="ig-tagged"
+            aria-controls="julia-ig-tagged"
             tabindex="-1"
           >
             <span data-icon="user"></span>
@@ -216,79 +237,416 @@
         </div>
 
         <div
-          id="ig-posts"
+          id="julia-ig-posts"
           role="tabpanel"
-          aria-labelledby="ig-tab-posts"
+          aria-labelledby="julia-ig-tab-posts"
         >
           <div class="ig-grid">
-            <!--
-              Estes são espaços de composição.
-              Substitua cada bloco por uma imagem de publicação.
-            -->
 
-            <div class="ig-post-placeholder">
-              <span data-icon="image"></span>
-              <span>Publicação 01</span>
-            </div>
+            <!-- JUL-IG-03: MAIS RECENTE -->
+            <button
+              class="ig-grid-button"
+              type="button"
+              data-open-dialog="julia-post-ig-03"
+              aria-label="Abrir publicação de 4 de outubro de 2026"
+            >
+              <img
+                class="ig-photo"
+                src="../imagens/[JUL-IG-03].jpeg"
+                alt="Caneca, caderno e tela com desenho do gato Pixel"
+                loading="lazy"
+              >
+            </button>
 
-            <div class="ig-post-placeholder">
-              <span data-icon="image"></span>
-              <span>Publicação 02</span>
-            </div>
+            <!-- JUL-IG-02 -->
+            <button
+              class="ig-grid-button"
+              type="button"
+              data-open-dialog="julia-post-ig-02"
+              aria-label="Abrir publicação de 21 de agosto de 2026"
+            >
+              <img
+                class="ig-photo"
+                src="../imagens/[JUL-IG-02.jpg"
+                alt="Painel da Semana de Design e crachá de Design de Informação — 2º período"
+                loading="lazy"
+              >
+            </button>
 
-            <div class="ig-post-placeholder">
-              <span data-icon="image"></span>
-              <span>Publicação 03</span>
-            </div>
+            <!-- JUL-IG-01: MAIS ANTIGA -->
+            <button
+              class="ig-grid-button"
+              type="button"
+              data-open-dialog="julia-post-ig-01"
+              aria-label="Abrir publicação de 8 de abril de 2026"
+            >
+              <img
+                class="ig-photo"
+                src="../imagens/[JUL-IG-01].jpg"
+                alt="Júlia com cupcake e cartão de 19 anos"
+                loading="lazy"
+              >
+            </button>
 
-            <div class="ig-post-placeholder">
-              <span data-icon="image"></span>
-              <span>Publicação 04</span>
-            </div>
-
-            <div class="ig-post-placeholder">
-              <span data-icon="image"></span>
-              <span>Publicação 05</span>
-            </div>
-
-            <div class="ig-post-placeholder">
-              <span data-icon="image"></span>
-              <span>Publicação 06</span>
-            </div>
           </div>
         </div>
 
         <div
-          id="ig-reels"
+          id="julia-ig-reels"
           class="network-empty"
           role="tabpanel"
-          aria-labelledby="ig-tab-reels"
+          aria-labelledby="julia-ig-tab-reels"
           hidden
         >
           <span data-icon="video"></span>
-          <h2>Espaço para reels</h2>
-          <p>Adicione os vídeos deste perfil posteriormente.</p>
+          <h2>Nenhum reel</h2>
         </div>
 
         <div
-          id="ig-tagged"
+          id="julia-ig-tagged"
           class="network-empty"
           role="tabpanel"
-          aria-labelledby="ig-tab-tagged"
+          aria-labelledby="julia-ig-tab-tagged"
           hidden
         >
           <span data-icon="user"></span>
-          <h2>Publicações marcadas</h2>
-          <p>Adicione este conteúdo quando preparar o perfil.</p>
+          <h2>Nenhuma publicação marcada</h2>
         </div>
       </section>
 
       <footer class="ig-footer">
-        Interface para simulação local · Sem vínculo com o Instagram
+        Perfil fictício para simulação educativa.
+        Sem vínculo com o Instagram.
       </footer>
     </div>
   </main>
 
+  <!-- PUBLICAÇÃO JUL-IG-01: ANIVERSÁRIO -->
+  <dialog
+    id="julia-post-ig-01"
+    class="publication-dialog"
+    aria-labelledby="julia-post-ig-01-title"
+  >
+    <div class="publication-dialog-top">
+      <h2 id="julia-post-ig-01-title">
+        Publicação de julia.nogueira.vc
+      </h2>
+
+      <form method="dialog">
+        <button
+          class="icon-button"
+          type="submit"
+          aria-label="Fechar publicação"
+          autofocus
+        >
+          ✕
+        </button>
+      </form>
+    </div>
+
+    <div class="publication-dialog-layout">
+      <img
+        class="publication-dialog-image"
+        src="../imagens/[JUL-IG-01].jpg"
+        alt="Júlia com cupcake e cartão de 19 anos, acompanhada de duas pessoas"
+      >
+
+      <div class="publication-dialog-content">
+        <p class="publication-caption">
+          <strong>julia.nogueira.vc</strong>
+          Aniversário no meio da semana e um monte de carinho
+        </p>
+
+        <time datetime="2026-04-08T20:35">
+          8 de abril de 2026 às 20h35
+        </time>
+
+        <h3>Comentários</h3>
+
+        <ul class="publication-comments">
+          <li>
+            <strong>@celia.nogueira.vc</strong>
+            Feliz 19, filha!
+          </li>
+
+          <li>
+            <strong>@andre.nogueira.vc</strong>
+            Parabéns, irmã
+          </li>
+
+          <li>
+            <strong>@nina.castro.vc</strong>
+            Guardei um cupcake para você
+          </li>
+        </ul>
+      </div>
+    </div>
+  </dialog>
+
+  <!-- PUBLICAÇÃO JUL-IG-02: FACULDADE -->
+  <dialog
+    id="julia-post-ig-02"
+    class="publication-dialog"
+    aria-labelledby="julia-post-ig-02-title"
+  >
+    <div class="publication-dialog-top">
+      <h2 id="julia-post-ig-02-title">
+        Publicação de julia.nogueira.vc
+      </h2>
+
+      <form method="dialog">
+        <button
+          class="icon-button"
+          type="submit"
+          aria-label="Fechar publicação"
+          autofocus
+        >
+          ✕
+        </button>
+      </form>
+    </div>
+
+    <div class="publication-dialog-layout">
+      <img
+        class="publication-dialog-image"
+        src="../imagens/[JUL-IG-02.jpg"
+        alt="Painel da Semana de Design na Faculdade do Vale Claro e crachá de Design de Informação — 2º período"
+      >
+
+      <div class="publication-dialog-content">
+        <p class="publication-caption">
+          <strong>julia.nogueira.vc</strong>
+          Nosso cartaz entrou na exposição!
+          O Pedro revisou a última versão comigo.
+        </p>
+
+        <time datetime="2026-08-21T16:10">
+          21 de agosto de 2026 às 16h10
+        </time>
+
+        <h3>Comentários</h3>
+
+        <ul class="publication-comments">
+          <li>
+            <strong>@pedro.lins.vc</strong>
+            Valeu cada ajuste
+          </li>
+
+          <li>
+            <strong>@nina.castro.vc</strong>
+            Eu sabia que ia ficar lindo
+          </li>
+
+          <li>
+            <strong>@andre.nogueira.vc</strong>
+            Quero ver ao vivo
+          </li>
+        </ul>
+      </div>
+    </div>
+  </dialog>
+
+  <!-- PUBLICAÇÃO JUL-IG-03: PIXEL -->
+  <dialog
+    id="julia-post-ig-03"
+    class="publication-dialog"
+    aria-labelledby="julia-post-ig-03-title"
+  >
+    <div class="publication-dialog-top">
+      <h2 id="julia-post-ig-03-title">
+        Publicação de julia.nogueira.vc
+      </h2>
+
+      <form method="dialog">
+        <button
+          class="icon-button"
+          type="submit"
+          aria-label="Fechar publicação"
+          autofocus
+        >
+          ✕
+        </button>
+      </form>
+    </div>
+
+    <div class="publication-dialog-layout">
+      <img
+        class="publication-dialog-image"
+        src="../imagens/[JUL-IG-03].jpeg"
+        alt="Caneca, caderno e tela com desenho do gato Pixel"
+      >
+
+      <div class="publication-dialog-content">
+        <p class="publication-caption">
+          <strong>julia.nogueira.vc</strong>
+          Domingo de café, rascunhos e um retrato novo do Pixel
+        </p>
+
+        <time datetime="2026-10-04T14:12">
+          4 de outubro de 2026 às 14h12
+        </time>
+
+        <h3>Comentários</h3>
+
+        <ul class="publication-comments">
+          <li>
+            <strong>@celia.nogueira.vc</strong>
+            Ele posou por dois segundos
+          </li>
+
+          <li>
+            <strong>@nina.castro.vc</strong>
+            Essa caneca é perfeita
+          </li>
+
+          <li>
+            <strong>@pedro.lins.vc</strong>
+            Gostei da paleta
+          </li>
+        </ul>
+      </div>
+    </div>
+  </dialog>
+
+  <!-- DESTAQUE: PAUSAS -->
+  <dialog
+    id="julia-destaque-pausas"
+    class="publication-dialog"
+    aria-labelledby="julia-destaque-pausas-title"
+  >
+    <div class="publication-dialog-top">
+      <h2 id="julia-destaque-pausas-title">
+        Pausas
+      </h2>
+
+      <form method="dialog">
+        <button
+          class="icon-button"
+          type="submit"
+          aria-label="Fechar destaque"
+          autofocus
+        >
+          ✕
+        </button>
+      </form>
+    </div>
+
+    <div class="story-list">
+      <article class="story-item">
+        <img
+          src="../imagens/[JUL-IG-ST01].jpg"
+          alt="Placa ilustrada do Café Mapa"
+        >
+
+        <p class="story-location">
+          Colinas do Sol · Vila Cedro
+        </p>
+
+        <p>
+          Parada para revisar um desenho.
+        </p>
+
+        <time datetime="2026-09-13T15:30">
+          13 de setembro de 2026 às 15h30
+        </time>
+      </article>
+
+      <article class="story-item">
+        <img
+          src="../imagens/[JUL-IG-ST03].jpg"
+          alt="Pátio com figueira e placa Pátio da Figueira"
+        >
+
+        <p class="story-location">
+          Vila Cedro
+        </p>
+
+        <p>
+          Desenhando sombras por aqui.
+        </p>
+
+        <time datetime="2026-09-27T16:05">
+          27 de setembro de 2026 às 16h05
+        </time>
+      </article>
+    </div>
+  </dialog>
+
+  <!-- DESTAQUE: AULAS -->
+  <dialog
+    id="julia-destaque-aulas"
+    class="publication-dialog"
+    aria-labelledby="julia-destaque-aulas-title"
+  >
+    <div class="publication-dialog-top">
+      <h2 id="julia-destaque-aulas-title">
+        Aulas
+      </h2>
+
+      <form method="dialog">
+        <button
+          class="icon-button"
+          type="submit"
+          aria-label="Fechar destaque"
+          autofocus
+        >
+          ✕
+        </button>
+      </form>
+    </div>
+
+    <div class="story-list">
+      <article class="story-item">
+        <img
+          src="../imagens/[JUL-IG-ST02].jpg"
+          alt="Caderno de aula"
+        >
+
+        <p>
+          Segunda de aula às 19h.
+          Falta terminar o resumo.
+        </p>
+
+        <time datetime="2026-09-14T18:40">
+          14 de setembro de 2026 às 18h40
+        </time>
+      </article>
+
+      <article class="story-item">
+        <img
+          src="../imagens/[JUL-IG-ST04].jpg"
+          alt="Capa de caderno verde com lua branca"
+        >
+
+        <p>
+          Quarta, aula às 19h.
+          Hoje o ônibus demorou.
+        </p>
+
+        <time datetime="2026-09-30T18:35">
+          30 de setembro de 2026 às 18h35
+        </time>
+      </article>
+    </div>
+  </dialog>
+
   <div class="toast" role="status" aria-live="polite"></div>
+
+  <!-- Abre as publicações e os destaques -->
+  <script>
+    document
+      .querySelectorAll("[data-open-dialog]")
+      .forEach((button) => {
+        button.addEventListener("click", () => {
+          const dialog = document.getElementById(
+            button.dataset.openDialog
+          );
+
+          if (dialog instanceof HTMLDialogElement) {
+            dialog.showModal();
+          }
+        });
+      });
+  </script>
 </body>
 </html>
