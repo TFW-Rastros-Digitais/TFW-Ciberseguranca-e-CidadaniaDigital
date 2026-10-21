@@ -561,21 +561,139 @@
         .modal-desc {
             font-size: 0.85rem;
             color: var(--text-secondary);
-            margin-bottom: 1.25rem;
+            margin-bottom: 1rem;
             line-height: 1.5;
+        }
+
+        /* Abas dos 5 Perfis Fictícios */
+        .profile-tabs {
+            display: flex;
+            gap: 8px;
+            margin-bottom: 1.25rem;
+            overflow-x: auto;
+            padding-bottom: 6px;
+        }
+
+        .profile-tabs::-webkit-scrollbar {
+            height: 6px;
+        }
+
+        .profile-tabs::-webkit-scrollbar-thumb {
+            background: var(--surface);
+            border-radius: 3px;
+        }
+
+        .profile-tab {
+            background: rgba(255, 255, 255, 0.05);
+            border: 1px solid var(--border-color);
+            color: var(--text-secondary);
+            padding: 0.55rem 0.9rem;
+            border-radius: 8px;
+            cursor: pointer;
+            font-family: inherit;
+            font-size: 0.82rem;
+            font-weight: 700;
+            transition: all 0.25s;
+            white-space: nowrap;
+            display: flex;
+            align-items: center;
+            gap: 6px;
+        }
+
+        .profile-tab:hover {
+            background: rgba(0, 240, 255, 0.15);
+            border-color: var(--cyan-neon);
+            color: var(--text-primary);
+        }
+
+        .profile-tab.active {
+            background: rgba(168, 85, 247, 0.2);
+            border-color: var(--purple-neon);
+            color: #d8b4fe;
+            box-shadow: 0 0 15px var(--purple-glow);
+        }
+
+        /* Resumo do Perfil Selecionado */
+        .profile-summary-card {
+            background: rgba(0, 0, 0, 0.45);
+            border: 1px solid rgba(168, 85, 247, 0.3);
+            border-radius: 8px;
+            padding: 1rem 1.25rem;
+            margin-bottom: 1.25rem;
+            animation: card-appear 0.3s ease-out;
+        }
+
+        .summary-header {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            flex-wrap: wrap;
+            gap: 8px;
+            margin-bottom: 0.5rem;
+        }
+
+        .summary-name {
+            font-size: 1.05rem;
+            font-weight: 700;
+            color: var(--cyan-neon);
+            display: flex;
+            align-items: center;
+            gap: 8px;
+        }
+
+        .summary-handles {
+            font-size: 0.8rem;
+            color: var(--text-secondary);
+            display: flex;
+            gap: 8px;
+            flex-wrap: wrap;
+        }
+
+        .summary-handles span {
+            color: #cbd5e1;
+            background: rgba(255, 255, 255, 0.06);
+            padding: 2px 6px;
+            border-radius: 4px;
+        }
+
+        .summary-meta-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 6px 12px;
+            margin-top: 0.75rem;
+            padding-top: 0.75rem;
+            border-top: 1px solid rgba(255, 255, 255, 0.06);
+            font-size: 0.78rem;
+            color: var(--text-secondary);
+            line-height: 1.4;
+        }
+
+        .summary-meta-grid strong {
+            color: #d8b4fe;
+        }
+
+        .passwords-section-title {
+            font-size: 0.85rem;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            color: var(--cyan-neon);
+            margin-bottom: 0.75rem;
+            display: flex;
+            align-items: center;
+            gap: 6px;
         }
 
         .profile-list {
             display: flex;
             flex-direction: column;
-            gap: 12px;
+            gap: 10px;
         }
 
         .profile-card {
             background: rgba(255, 255, 255, 0.03);
             border: 1px solid rgba(255, 255, 255, 0.08);
             border-radius: 8px;
-            padding: 1rem 1.25rem;
+            padding: 0.9rem 1.15rem;
             display: flex;
             justify-content: space-between;
             align-items: center;
@@ -592,13 +710,13 @@
 
         .profile-info {
             flex: 1;
-            min-width: 260px;
+            min-width: 250px;
         }
 
         .profile-title {
-            font-size: 0.95rem;
+            font-size: 0.9rem;
             font-weight: 700;
-            color: var(--cyan-neon);
+            color: var(--text-primary);
             display: flex;
             align-items: center;
             gap: 8px;
@@ -606,7 +724,7 @@
         }
 
         .profile-relation {
-            font-size: 0.75rem;
+            font-size: 0.72rem;
             color: #c084fc;
             background: rgba(168, 85, 247, 0.15);
             padding: 2px 6px;
@@ -614,7 +732,7 @@
         }
 
         .profile-clue {
-            font-size: 0.8rem;
+            font-size: 0.78rem;
             color: var(--text-secondary);
             line-height: 1.4;
         }
@@ -634,6 +752,7 @@
             font-family: inherit;
             color: #fca5a5;
             letter-spacing: 1px;
+            font-weight: 700;
         }
 
         .btn-inject {
@@ -650,6 +769,9 @@
             letter-spacing: 1px;
             transition: all 0.2s;
             white-space: nowrap;
+            display: inline-flex;
+            align-items: center;
+            gap: 4px;
         }
 
         .btn-inject:hover {
@@ -791,10 +913,25 @@
         </div>
         <div class="modal-body">
             <p class="modal-desc">
-                Estes são os perfis investigados nas redes sociais (Instagram e X) da personagem <strong>Marina Souza</strong>. 
-                Clique em <strong>INJETAR</strong> para testar a senha no verificador e observar como as informações públicas tornam senhas aparentemente boas vulneráveis.
+                Selecione o perfil investigado na <strong>Estação 1 (Rastros Digitais)</strong>. 
+                Clique em <strong>INJETAR</strong> para testar a senha no verificador e observar como as informações públicas tornam senhas aparentemente boas vulneráveis a ataques direcionados.
             </p>
 
+            <!-- Abas dos 5 Perfis Fictícios -->
+            <div class="profile-tabs" id="profile-tabs" role="tablist">
+                <!-- Gerado dinamicamente via JS -->
+            </div>
+
+            <!-- Resumo do Perfil Selecionado -->
+            <div id="profile-summary-container">
+                <!-- Gerado dinamicamente via JS -->
+            </div>
+
+            <!-- Lista de Senhas Deduzíveis -->
+            <div class="passwords-section-title">
+                <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect width="18" height="11" x="3" y="11" rx="2" ry="2"/><path d="M7 11V7a5 5 0 0 1 10 0v4"/></svg>
+                Senhas Deduzíveis das Publicações
+            </div>
             <div class="profile-list" id="profile-list">
                 <!-- Preenchido dinamicamente via JS -->
             </div>
@@ -804,75 +941,211 @@
 
 <script>
     /* ==========================================================================
-       Banco de Dados do Caso Marina Souza (Estação 1)
+       Banco de Dados Oficial: 5 Perfis Fictícios (Estação Rastros Digitais)
+       Conforme documento oficial de 18 de outubro de 2026
        ========================================================================== */
-    const osintCase = {
-        // Termos públicos para detectar Targeted Wordlist
-        keywords: [
-            'marina', 'souza', 'duck', 'flamengo', 'mengo', 'volei', 'vôlei', 
-            '1709', '2007', '2026', 'catia', 'cátia', 'bia', 'oliveira', 
-            'lucas', 'ribeiro', 'carol', 'mendes', 'clarinha', 'clara'
-        ],
-        // Perfis com senhas exatas deduzidas
-        profiles: [
-            {
-                name: 'Marina Souza',
-                handle: '@marisouza_09',
-                relation: 'Personagem Principal',
-                clue: 'Nome + Data de aniversário (17/09/2007) revelada no bolo dos stories.',
-                password: 'Marina1709',
-                difficulty: 'Fácil'
-            },
-            {
-                name: 'Bia Oliveira',
-                handle: '@bia_oliveiras',
-                relation: 'Irmã',
-                clue: 'Troca da letra O pelo número zero (leetspeak previsível).',
-                password: 'Bia0liveira',
-                difficulty: 'Médio'
-            },
-            {
-                name: 'Cátia Oliveira',
-                handle: '@Catia_Oliveira',
-                relation: 'Mãe',
-                clue: 'Sobrenome seguido do primeiro nome invertido.',
-                password: 'OliveiraCatia',
-                difficulty: 'Médio'
-            },
-            {
-                name: 'Lucas Ribeiro',
-                handle: '@lucas.ribeiro',
-                relation: 'Amigo / Namorado',
-                clue: 'Mistura iniciais (Lu/Ri) com datas de aniversário.',
-                password: 'Lu02Ri09',
-                difficulty: 'Difícil'
-            },
-            {
-                name: 'Carol Mendes',
-                handle: '@carol.mendes',
-                relation: 'Colega de Vôlei',
-                clue: 'Nome, inicial do sobrenome e esporte público postado nos treinos.',
-                password: 'CarolMVolei',
-                difficulty: 'Fácil'
-            },
-            {
-                name: 'Ana Clara',
-                handle: '@ana.clara',
-                relation: 'Amiga de Escola',
-                clue: 'Apelido carinhoso seguido de sequência numérica comum (001).',
-                password: 'Clarinha001',
-                difficulty: 'Médio'
-            },
-            {
-                name: 'Pai do Duck',
-                handle: '@pai_do_duck',
-                relation: 'Familiar / Pet',
-                clue: 'Nome do cachorro da família + palavra "Familia" + ano atual (2026).',
-                password: 'DuckFamilia2026',
-                difficulty: 'Fácil'
-            }
-        ]
-    };
+    const osintProfiles = [
+        {
+            id: 'caio',
+            name: 'Caio Moura',
+            age: 17,
+            handleIG: '@caio.moura.vc',
+            handleX: '@KyoNebula17',
+            role: 'Colégio Horizonte do Vale · 2º ano do Ensino Médio',
+            pet: 'Gata Pipoca',
+            family: 'Lia Moura (Mãe), Davi Moura (Primo)',
+            social: 'Bruno Vale e Iara Solis (Amigos e Equipe)',
+            interests: 'Jogo Orbital Clash, equipe amadora Nebulosa 5, desenho digital',
+            routine: 'Partidas da equipe às terças e quintas, às 20h',
+            avatar: '🎮',
+            keywords: [
+                'caio', 'moura', 'kyo', 'nebulosa', 'orbital', 'pipoca', '1809', '2009',
+                'lia', 'davi', 'bruno', 'iara', 'horizonte'
+            ],
+            passwords: [
+                {
+                    pwd: 'Caio1809',
+                    difficulty: 'Fácil',
+                    explanation: 'Primeiro nome + aniversário (18/09/2009) comemorado no feed com velas "17" e tweet.'
+                },
+                {
+                    pwd: 'Pipoca2026',
+                    difficulty: 'Fácil',
+                    explanation: 'Nome da gata Pipoca (desenhada no tablet na Praça do Ipê Azul) + ano corrente.'
+                },
+                {
+                    pwd: 'KyoNebulosa5',
+                    difficulty: 'Médio',
+                    explanation: 'Apelido gamer Kyo + equipe amadora Nebulosa 5 (estampado na manga da camisa).'
+                },
+                {
+                    pwd: 'Orbital20h',
+                    difficulty: 'Médio',
+                    explanation: 'Jogo favorito (Orbital Clash) + horário fixo de treino (terças e quintas às 20h).'
+                }
+            ]
+        },
+        {
+            id: 'marina',
+            name: 'Marina Azevedo',
+            age: 15,
+            handleIG: '@marina.azevedo.vc',
+            handleX: '@MarihQuadra',
+            role: 'Colégio Pátio das Oliveiras · 1º ano do Ensino Médio',
+            pet: 'Cachorro Thor',
+            family: 'Sônia Azevedo (Mãe), Bia Azevedo (Irmã)',
+            social: 'Luna Prado e Teo Farias (Amigos)',
+            interests: 'Flamengo, fotografia e vôlei',
+            routine: 'Treino de vôlei quartas às 16h (Quadra Aurora)',
+            avatar: '🏐',
+            keywords: [
+                'marina', 'azevedo', 'mari', 'marih', 'thor', '1405', '2011',
+                'sonia', 'sônia', 'bia', 'luna', 'teo', 'volei', 'vôlei', 'flamengo', 'aurora'
+            ],
+            passwords: [
+                {
+                    pwd: 'Mari1405',
+                    difficulty: 'Fácil',
+                    explanation: 'Apelido Mari + aniversário (14/05/2011) do bolo de 15 anos postado no feed.'
+                },
+                {
+                    pwd: 'ThorVolei',
+                    difficulty: 'Fácil',
+                    explanation: 'Cachorro Thor (com plaquinha na foto) + esporte favorito exposto em feed e stories.'
+                },
+                {
+                    pwd: 'MarinaAzevedo15',
+                    difficulty: 'Fácil',
+                    explanation: 'Nome e sobrenome completos + idade comemorada nas redes sociais.'
+                },
+                {
+                    pwd: 'FlamengoQuarta16',
+                    difficulty: 'Médio',
+                    explanation: 'Time favorito no tweet fixado + horário e dia de treino de vôlei (quartas às 16h).'
+                }
+            ]
+        },
+        {
+            id: 'julia',
+            name: 'Júlia Nogueira',
+            age: 19,
+            handleIG: '@julia.nogueira.vc',
+            handleX: '@JuNotasNoite',
+            role: 'Faculdade do Vale Claro · Design de Informação (2º período)',
+            pet: 'Gato Pixel',
+            family: 'Célia Nogueira (Mãe), André Nogueira (Irmão)',
+            social: 'Nina Castro e Pedro Lins (Amigos e colegas de curso)',
+            interests: 'Tipografia, café e desenho',
+            routine: 'Aulas noturnas segundas e quartas às 19h',
+            avatar: '🎨',
+            keywords: [
+                'julia', 'júlia', 'nogueira', 'ju', 'pixel', '0804', '2007',
+                'celia', 'célia', 'andre', 'andré', 'nina', 'pedro', 'tipografia', 'cafemapa'
+            ],
+            passwords: [
+                {
+                    pwd: 'Julia0804',
+                    difficulty: 'Fácil',
+                    explanation: 'Nome + data de aniversário (08/04/2007) revelada no cupcake de 19 anos.'
+                },
+                {
+                    pwd: 'PixelCafeMapa',
+                    difficulty: 'Médio',
+                    explanation: 'Gato Pixel desenhado no feed + cafeteria que frequenta (Café Mapa, Colinas do Sol).'
+                },
+                {
+                    pwd: 'Design2Periodo',
+                    difficulty: 'Fácil',
+                    explanation: 'Curso universitário e período visíveis no crachá da Semana de Design no feed.'
+                },
+                {
+                    pwd: 'JuNotasNoite19',
+                    difficulty: 'Médio',
+                    explanation: 'Handle do X @JuNotasNoite + idade celebrada nos acontecimentos pessoais.'
+                }
+            ]
+        },
+        {
+            id: 'rafael',
+            name: 'Rafael Almeida',
+            age: 20,
+            handleIG: '@rafa.almeida.vc',
+            handleX: '@RafaVento7',
+            role: 'Faculdade Horizonte Sul · Educação Física (3º período)',
+            pet: 'Cadela Nuvem',
+            family: 'Dora Almeida (Mãe), Henrique Almeida (Irmão)',
+            social: 'Caetano Luz e Mila Torres (Amigos do futsal e faculdade)',
+            interests: 'Corrida, futsal e Flamengo',
+            routine: 'Treino de corrida segundas e sextas às 6h30',
+            avatar: '🏃',
+            keywords: [
+                'rafael', 'almeida', 'rafa', 'nuvem', '0302', '2006',
+                'dora', 'henrique', 'caetano', 'mila', 'futsal', 'corrida', 'flamengo', 'vento'
+            ],
+            passwords: [
+                {
+                    pwd: 'Rafa0302',
+                    difficulty: 'Fácil',
+                    explanation: 'Apelido Rafa + data de aniversário (03/02/2006) da surpresa pós-treino dos 20 anos.'
+                },
+                {
+                    pwd: 'NuvemCorrida',
+                    difficulty: 'Fácil',
+                    explanation: 'Nome da cadela Nuvem (na coleira do passeio) + rotina de corrida matinal.'
+                },
+                {
+                    pwd: 'RafaVento7',
+                    difficulty: 'Médio',
+                    explanation: 'Handle do X @RafaVento7 e número "7" estampado no tênis azul compartilhado nas duas redes.'
+                },
+                {
+                    pwd: 'FlamengoFutsal3',
+                    difficulty: 'Médio',
+                    explanation: 'Time favorito (tweet fixado de domingo) + esporte de futsal do 3º período.'
+                }
+            ]
+        },
+        {
+            id: 'beatriz',
+            name: 'Beatriz Campos',
+            age: 18,
+            handleIG: '@bia.campos.vc',
+            handleX: '@BiaNoAcorde',
+            role: 'Escola Livre das Artes do Vale · Produção Cultural (1º período)',
+            pet: 'Gato Pingo',
+            family: 'Rosa Campos (Mãe), Tomás Campos (Irmão)',
+            social: 'Clara Mello e Aline Pires (Amigas de ensaio e oficina)',
+            interests: 'Música, violão e banda Marés de Papel',
+            routine: 'Ensaio aos sábados às 14h',
+            avatar: '🎸',
+            keywords: [
+                'beatriz', 'campos', 'bia', 'pingo', '2106', '2008',
+                'rosa', 'tomas', 'tomás', 'clara', 'aline', 'violao', 'violão', 'mares', 'marés'
+            ],
+            passwords: [
+                {
+                    pwd: 'Bia2106',
+                    difficulty: 'Fácil',
+                    explanation: 'Apelido Bia + aniversário (21/06/2008) da comemoração de 18 anos com a playlist da Clara.'
+                },
+                {
+                    pwd: 'PingoViolao',
+                    difficulty: 'Fácil',
+                    explanation: 'Gato Pingo com plaquinha acompanhando o ensaio no feed + violão.'
+                },
+                {
+                    pwd: 'MaresDePapel18',
+                    difficulty: 'Médio',
+                    explanation: 'Banda favorita Marés de Papel (tweet fixado) + idade celebrada.'
+                },
+                {
+                    pwd: 'Sabado14hEnsaio',
+                    difficulty: 'Médio',
+                    explanation: 'Rotina semanal e horário literal publicado nos stories e tweets de ensaio.'
+                }
+            ]
+        }
+    ];
 
     // Dicionário de senhas globais comuns
     const commonPasswords = [
@@ -881,12 +1154,15 @@
         'senha', 'senha123', 'brasil', 'mengo', 'flamengo', 'vasco'
     ];
 
-    // Banco de palavras para o gerador de passphrases (XKCD 936 / NIST)
+    // Banco de palavras para o gerador de passphrases (XKCD 936 / NIST SP 800-63B)
     const wordList = [
         'Bateria', 'Cachorro', 'Teclado', 'Amarelo', 'Janela', 'Foguete', 
         'Estrela', 'Montanha', 'Dinossauro', 'Abacate', 'Violao', 'Espelho', 
         'Geladeira', 'Caneta', 'Horizonte', 'Universo', 'Safira', 'Laranja'
     ];
+
+    // Estado da Aplicação
+    let currentProfileId = 'caio';
 
     // Elementos DOM
     const pwdInput = document.getElementById('password');
@@ -900,10 +1176,12 @@
     const btnGenerate = document.getElementById('btn-generate');
     const btnCheckLeak = document.getElementById('btn-check-leak');
 
-    // Elementos do Modal
+    // Elementos do Modal Dossiê
     const modalDossier = document.getElementById('modal-dossier');
     const btnOpenDossier = document.getElementById('btn-open-dossier');
     const btnCloseDossier = document.getElementById('btn-close-dossier');
+    const profileTabsEl = document.getElementById('profile-tabs');
+    const profileSummaryEl = document.getElementById('profile-summary-container');
     const profileListEl = document.getElementById('profile-list');
 
     // Ícones vetoriais estilo Lucide (SVG Inline)
@@ -912,31 +1190,68 @@
     const zapIconSvg = `<svg xmlns="http://www.w3.org/2000/svg" width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" style="display:inline-block; vertical-align:middle; margin-right:4px;"><polygon points="13 2 3 14 12 14 11 22 21 10 12 10 13 2"/></svg>`;
 
     /* ==========================================================================
-       Renderização do Modal de Perfis (Estação 1)
+       Renderização do Modal de Perfis (Abas e Detalhes)
        ========================================================================== */
-    function renderProfiles() {
+    function renderDossier() {
+        // 1. Renderiza as abas dos 5 perfis
+        profileTabsEl.innerHTML = '';
+        osintProfiles.forEach(p => {
+            const tab = document.createElement('button');
+            tab.className = `profile-tab ${p.id === currentProfileId ? 'active' : ''}`;
+            tab.innerHTML = `<span>${p.avatar}</span> ${p.name.split(' ')[0]}`;
+            tab.addEventListener('click', () => {
+                currentProfileId = p.id;
+                renderDossier();
+            });
+            profileTabsEl.appendChild(tab);
+        });
+
+        // 2. Renderiza o resumo do perfil selecionado
+        const current = osintProfiles.find(p => p.id === currentProfileId);
+        profileSummaryEl.innerHTML = `
+            <div class="profile-summary-card">
+                <div class="summary-header">
+                    <div class="summary-name">
+                        <span>${current.avatar}</span> ${current.name} (${current.age} anos)
+                    </div>
+                    <div class="summary-handles">
+                        <span>IG: ${current.handleIG}</span>
+                        <span>X: ${current.handleX}</span>
+                    </div>
+                </div>
+                <p style="font-size: 0.82rem; color: #cbd5e1; margin-top: 4px;">${current.role}</p>
+                <div class="summary-meta-grid">
+                    <div class="summary-meta-item"><strong>Animal:</strong> ${current.pet}</div>
+                    <div class="summary-meta-item"><strong>Família:</strong> ${current.family}</div>
+                    <div class="summary-meta-item"><strong>Amizades:</strong> ${current.social}</div>
+                    <div class="summary-meta-item"><strong>Interesses:</strong> ${current.interests}</div>
+                    <div class="summary-meta-item" style="grid-column: 1 / -1;"><strong>Rotina Identificada:</strong> ${current.routine}</div>
+                </div>
+            </div>
+        `;
+
+        // 3. Renderiza a lista de senhas deduzíveis desse perfil
         profileListEl.innerHTML = '';
-        osintCase.profiles.forEach(p => {
+        current.passwords.forEach(pwdItem => {
             const card = document.createElement('div');
             card.className = 'profile-card';
             card.innerHTML = `
                 <div class="profile-info">
                     <div class="profile-title">
-                        ${p.name} <span style="font-weight: normal; color: var(--text-secondary); font-size: 0.8rem;">${p.handle}</span>
-                        <span class="profile-relation">${p.relation}</span>
+                        <span class="pwd-pill">${pwdItem.pwd}</span>
+                        <span class="profile-relation">${pwdItem.difficulty}</span>
                     </div>
-                    <div class="profile-clue"><strong>Pista:</strong> ${p.clue} <span style="color: #94a3b8;">(${p.difficulty})</span></div>
+                    <div class="profile-clue"><strong>Pista:</strong> ${pwdItem.explanation}</div>
                 </div>
                 <div class="profile-pwd-box">
-                    <span class="pwd-pill">${p.password}</span>
-                    <button class="btn-inject" data-pwd="${p.password}">${zapIconSvg}Injetar</button>
+                    <button class="btn-inject" data-pwd="${pwdItem.pwd}">${zapIconSvg}Injetar</button>
                 </div>
             `;
             profileListEl.appendChild(card);
         });
 
         // Eventos nos botões de injetar
-        document.querySelectorAll('.btn-inject').forEach(btn => {
+        profileListEl.querySelectorAll('.btn-inject').forEach(btn => {
             btn.addEventListener('click', (e) => {
                 const targetPwd = e.currentTarget.getAttribute('data-pwd');
                 pwdInput.value = targetPwd;
@@ -950,7 +1265,7 @@
         });
     }
 
-    renderProfiles();
+    renderDossier();
 
     // Abrir/Fechar Modal
     btnOpenDossier.addEventListener('click', () => { modalDossier.style.display = 'flex'; });
@@ -1043,7 +1358,6 @@
             const prefix = hash.substring(0, 5);
             const suffix = hash.substring(5);
 
-            // k-Anonymity: envia apenas os 5 primeiros caracteres do hash
             const response = await fetch(`https://api.pwnedpasswords.com/range/${prefix}`);
             const text = await response.text();
 
@@ -1070,7 +1384,7 @@
     });
 
     /* ==========================================================================
-       Processamento Dinâmico ao Digitar (Input Handler)
+       Processamento Dinâmico ao Digitar (Input Handler com Suporte aos 5 Perfis)
        ========================================================================== */
     pwdInput.addEventListener('input', () => {
         const val = pwdInput.value;
@@ -1108,30 +1422,50 @@
             msgs.push('Contém termos extremamente comuns de dicionário. Quebrada quase instantaneamente por ataques de força bruta.');
         }
 
-        // 2. Verificação de Correspondência Exata com Perfis da Estação 1
-        const matchedProfile = osintCase.profiles.find(p => p.password.toLowerCase() === val.toLowerCase());
-        if (matchedProfile) {
+        // 2. Verificação de Correspondência Exata em TODOS os 5 Perfis da Estação 1
+        let matchedPwdInfo = null;
+        for (const prof of osintProfiles) {
+            const found = prof.passwords.find(p => p.pwd.toLowerCase() === val.toLowerCase());
+            if (found) {
+                matchedPwdInfo = { profile: prof, pwd: found };
+                break;
+            }
+        }
+
+        if (matchedPwdInfo) {
             isOsintCompromised = true;
             osintWarning.innerHTML = `
-                <strong><span class="osint-badge">ESTAÇÃO 1</span> RASTROS DIGITAIS COMPROMETIDOS:</strong>
-                Esta é a senha do perfil de <strong>${matchedProfile.name} (${matchedProfile.relation})</strong>!<br>
-                <em>Pista explorada:</em> ${matchedProfile.clue}
+                <strong><span class="osint-badge">${matchedPwdInfo.profile.name}</span> RASTROS DIGITAIS COMPROMETIDOS:</strong>
+                Esta é a senha do perfil de <strong>${matchedPwdInfo.profile.name} (${matchedPwdInfo.profile.age} anos · Estação 1)</strong>!<br>
+                <em>Pista explorada:</em> ${matchedPwdInfo.pwd.explanation}
             `;
             osintWarning.style.display = 'block';
-            msgs.push(`Vulnerabilidade crítica de Engenharia Social: Informações expostas nas redes sociais permitiram deduzir esta senha.`);
+            msgs.push(`Vulnerabilidade crítica de Engenharia Social: Informações expostas nas redes sociais de ${matchedPwdInfo.profile.name.split(' ')[0]} permitiram deduzir esta senha.`);
         } else {
-            // 3. Verificação de Palavras-Chave do Caso Marina (Targeted Wordlists)
+            // 3. Verificação de Palavras-Chave dos 5 Perfis (Targeted Wordlists)
             const lowerVal = val.toLowerCase();
-            const foundKeywords = osintCase.keywords.filter(k => lowerVal.includes(k));
-            if (foundKeywords.length > 0) {
+            const matchedKeywords = [];
+
+            osintProfiles.forEach(prof => {
+                const found = prof.keywords.filter(k => lowerVal.includes(k.toLowerCase()));
+                if (found.length > 0) {
+                    matchedKeywords.push({ name: prof.name, terms: found });
+                }
+            });
+
+            if (matchedKeywords.length > 0) {
                 isOsintCompromised = true;
+                const termsSummary = matchedKeywords
+                    .map(m => `<strong>${m.name.split(' ')[0]}:</strong> "${m.terms.join(', ')}"`)
+                    .join(' | ');
+
                 osintWarning.innerHTML = `
-                    <strong><span class="osint-badge">ALERTA OSINT</span> DADOS PESSOAIS DA MARINA DETECTADOS:</strong>
-                    A senha contém termos públicos da personagem: <em>"${foundKeywords.join(', ')}"</em>. 
-                    Criminosos utilizam ferramentas para cruzar publicações e testar variações de nomes, pets e datas.
+                    <strong><span class="osint-badge">ALERTA OSINT</span> DADOS PESSOAIS DA ESTAÇÃO 1 DETECTADOS:</strong>
+                    A senha contém termos públicos de personagens da mostra (${termsSummary}). 
+                    Criminosos utilizam ferramentas de inteligência para cruzar publicações e testar variações de nomes, pets e datas através de <em>Targeted Wordlists</em>!
                 `;
                 osintWarning.style.display = 'block';
-                msgs.push('Senhas contendo informações pessoais caem em ataques direcionados (Targeted Wordlists), ignorando a complexidade.');
+                msgs.push('Senhas contendo informações pessoais caem em ataques direcionados (Targeted Wordlists), tornando irrelevante a complexidade.');
             }
         }
 
