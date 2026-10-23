@@ -1,27 +1,69 @@
 /**
- * Camada de Comunicação com a API REST de Autenticação e 2FA
+ * Camada de Serviço de Autenticação e 2FA (Client-Side)
+ * Substitui os endpoints REST do servidor Fastify por serviços locais no navegador,
+ * mantendo as mesmas assinaturas e formatos de retorno esperados pelos componentes.
  */
+
+import { generateSecret, keyuri, check } from '../lib/totp.js';
+import { toDataURL } from '../lib/qrcode.js';
+import {
+  findUser,
+  verifyCredentials,
+  setPendingSecret,
+  confirmPendingSecret,
+  disableUserTotp,
+  resetUsers
+} from '../lib/users.js';
 
 /**
- * Utilitário interno para processar respostas JSON e tratar erros HTTP
- * @param {Response} response
- * @param {string} defaultErrorMessage
- * @returns {Promise<any>}
+ * Utilitário para simular uma breve latência de rede e manter a sensação tátil da interface
+ * @param {number} ms
  */
-async function handleResponse(response, defaultErrorMessage) {
-  let data;
+const delay = (ms = 120) => new Promise(resolve => setTimeout(resolve, ms));
+
+/**
+ * Gera um token assinado (simulado via Base64 seguro)
+ * @param {string} username
+ * @param {'full' | '2fa'} purpose
+ */
+function createToken(username, purpose) {
+  const payload = {
+    sub: username,
+    purpose,
+    iat: Date.now(),
+    exp: Date.now() + (purpose === '2fa' ? 5 * 60 * 1000 : 60 * 60 * 1000)
+  };
+  return btoa(encodeURIComponent(JSON.stringify(payload)));
+}
+
+/**
+ * Valida e decodifica o token de sessão
+ * @param {string} token
+ * @param {'full' | '2fa'} expectedPurpose
+ * @returns {string} Nome de usuário (sub)
+ */
+function parseToken(token, expectedPurpose) {
+  if (!token) {
+    throw new Error('Token de autenticação não fornecido.');
+  }
+
   try {
-    data = await response.json();
-  } catch {
-    data = {};
-  }
+    const raw = decodeURIComponent(atob(token));
+    const payload = JSON.parse(raw);
 
-  if (!response.ok) {
-    const errorMsg = data.error || defaultErrorMessage || `Erro na requisição (Status: ${response.status})`;
-    throw new Error(errorMsg);
-  }
+    if (payload.exp && Date.now() > payload.exp) {
+      throw new Error('Sessão expirada. Faça login novamente.');
+    }
 
-  return data;
+    if (expectedPurpose && payload.purpose !== expectedPurpose) {
+      throw new Error('Permissão insuficiente para esta operação.');
+    }
+
+    return payload.sub;
+  } catch (err) {
+    if (err.message.includes('Sessão expirada')) throw err;
+    throw new Error('Token de autenticação inválido.');
+  }
 }
 
 /**
@@ -31,13 +73,30 @@ async function handleResponse(response, defaultErrorMessage) {
  * @returns {Promise<{ twoFactorRequired: boolean, token?: string, tempToken?: string }>}
  */
 export async function apiLogin(username, password) {
-  const response = await fetch('/login', {
-    method: 'POST',
-    headers: { 'Content-Type': 'application/json' },
-    body: JSON.stringify({ username, password })
-  });
+  await delay(150);
 
-  return handleResponse(response, 'Credenciais inválidas. Verifique os dados digitados.');
+  const isValid = verifyCredentials(username, password);
+  if (!isValid) {
+    throw new Error('Nome de usuário ou senha inválidos.');
+  }
+
+  const user = findUser(username);
+
+  // Se o usuário possui TOTP ativado, emite token temporário para o desafio 2FA
+  if (user.totpSecret) {
+    const tempToken = createToken(user.username, '2fa');
+    return {
+      twoFactorRequired: true,
+      tempToken
+    };
+  }
+
+  // Login direto sem 2FA
+  const token = createToken(user.username, 'full');
+  return {
+    twoFactorRequired: false,
+    token
+  };
 }
 
 /**
@@ -47,16 +106,22 @@ export async function apiLogin(username, password) {
  * @returns {Promise<{ token: string }>}
  */
 export async function apiVerifyTotpLogin(tempToken, code) {
-  const response = await fetch('/2fa/verify', {
-    method: 'POST',
-    headers: {
-      'Content-Type': 'application/json',
-      'Authorization': `Bearer ${tempToken}`
-    },
-    body: JSON.stringify({ code })
-  });
+  await delay(150);
 
-  return handleResponse(response, 'Código de verificação incorreto ou expirado.');
+  const username = parseToken(tempToken, '2fa');
+  const user = findUser(username);
+
+  if (!user || !user.totpSecret) {
+    throw new Error('Token temporário inválido ou expirado.');
+  }
+
+  const isCodeValid = await check(code, user.totpSecret);
+  if (!isCodeValid) {
+    throw new Error('Código de verificação incorreto ou expirado.');
+  }
+
+  const token = createToken(user.username, 'full');
+  return { token };
 }
 
 /**
@@ -65,14 +130,31 @@ export async function apiVerifyTotpLogin(tempToken, code) {
  * @returns {Promise<{ secret: string, qrCode: string, otpauthUrl: string }>}
  */
 export async function apiSetup2fa(authToken) {
-  const response = await fetch('/2fa/setup', {
-    method: 'POST',
-    headers: {
-      'Authorization': `Bearer ${authToken}`
-    }
-  });
+  await delay(150);
 
-  return handleResponse(response, 'Falha ao iniciar o processo de setup do 2FA.');
+  const username = parseToken(authToken, 'full');
+  const user = findUser(username);
+
+  if (!user) {
+    throw new Error('Usuário não localizado.');
+  }
+
+  if (user.totpSecret) {
+    throw new Error('O 2FA já está ativo para esta conta.');
+  }
+
+  // Gera novo segredo Base32 (160 bits / 20 bytes)
+  const secret = generateSecret(20);
+  setPendingSecret(user.username, secret);
+
+  const otpauthUrl = keyuri(user.username, secret);
+  const qrCode = await toDataURL(otpauthUrl);
+
+  return {
+    secret,
+    otpauthUrl,
+    qrCode
+  };
 }
 
 /**
@@ -82,16 +164,22 @@ export async function apiSetup2fa(authToken) {
  * @returns {Promise<{ message: string }>}
  */
 export async function apiEnable2fa(authToken, code) {
-  const response = await fetch('/2fa/enable', {
-    method: 'POST',
-    headers: {
-      'Content-Type': 'application/json',
-      'Authorization': `Bearer ${authToken}`
-    },
-    body: JSON.stringify({ code })
-  });
+  await delay(150);
 
-  return handleResponse(response, 'Código inválido para confirmação do setup.');
+  const username = parseToken(authToken, 'full');
+  const user = findUser(username);
+
+  if (!user || !user.pendingSecret) {
+    throw new Error('É necessário iniciar o setup antes de confirmar o código.');
+  }
+
+  const isCodeValid = await check(code, user.pendingSecret);
+  if (!isCodeValid) {
+    throw new Error('Código inválido. Verifique o horário do seu dispositivo e tente novamente.');
+  }
+
+  confirmPendingSecret(user.username);
+  return { message: '2FA ativado com sucesso.' };
 }
 
 /**
@@ -101,31 +189,30 @@ export async function apiEnable2fa(authToken, code) {
  * @returns {Promise<{ message: string }>}
  */
 export async function apiDisable2fa(authToken, code) {
-  const response = await fetch('/2fa/disable', {
-    method: 'POST',
-    headers: {
-      'Content-Type': 'application/json',
-      'Authorization': `Bearer ${authToken}`
-    },
-    body: JSON.stringify({ code })
-  });
+  await delay(150);
 
-  return handleResponse(response, 'Código incorreto ao desativar o 2FA.');
+  const username = parseToken(authToken, 'full');
+  const user = findUser(username);
+
+  if (!user || !user.totpSecret) {
+    throw new Error('O 2FA não está ativo nesta conta.');
+  }
+
+  const isCodeValid = await check(code, user.totpSecret);
+  if (!isCodeValid) {
+    throw new Error('Código incorreto ao desativar o 2FA.');
+  }
+
+  disableUserTotp(user.username);
+  return { message: '2FA desativado com sucesso.' };
 }
 
 /**
- * Reseta o estado do sistema no servidor (sem necessidade de autenticação)
+ * Reseta o estado do sistema e dos usuários de demonstração
  * @returns {Promise<{ message: string }>}
  */
 export async function apiResetSystem() {
-  const response = await fetch('/reset', {
-    method: 'POST',
-    headers: {
-      'Content-Type': 'application/json'
-    },
-    body: JSON.stringify({})
-  });
-
-  return handleResponse(response, 'Falha ao resetar o estado do sistema.');
+  await delay(100);
+  resetUsers();
+  return { message: 'Estado do sistema resetado com sucesso.' };
 }
-
