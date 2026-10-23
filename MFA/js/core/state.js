@@ -1,7 +1,3 @@
-/**
- * Gestão de Estado Centralizada da Aplicação
- */
-
 const initialState = {
   authToken: null,
   tempToken: null,

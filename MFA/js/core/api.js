@@ -1,9 +1,3 @@
-/**
- * Camada de Serviço de Autenticação e 2FA (Client-Side)
- * Substitui os endpoints REST do servidor Fastify por serviços locais no navegador,
- * mantendo as mesmas assinaturas e formatos de retorno esperados pelos componentes.
- */
-
 import { generateSecret, keyuri, check } from '../lib/totp.js';
 import { toDataURL } from '../lib/qrcode.js';
 import {

@@ -1,8 +1,3 @@
-/**
- * Módulo de Autenticação Multifator TOTP (RFC 6238)
- * Carregado diretamente via CDN jsDelivr ES Modules (otplib oficial)
- */
-
 import { generateSecret, generateURI, verify } from 'https://cdn.jsdelivr.net/npm/otplib@13.5.0/+esm';
 
 export const ISSUER = 'TFW - Grupo 2';

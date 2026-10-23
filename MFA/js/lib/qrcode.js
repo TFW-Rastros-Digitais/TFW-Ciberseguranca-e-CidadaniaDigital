@@ -1,8 +1,3 @@
-/**
- * Módulo de Geração de QR Code
- * Carregado diretamente via CDN jsDelivr ES Modules (pacote oficial npm 'qrcode')
- */
-
 import QRCode from 'https://cdn.jsdelivr.net/npm/qrcode@1.5.4/+esm';
 
 /**

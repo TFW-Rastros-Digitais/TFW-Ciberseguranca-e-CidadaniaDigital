@@ -1,9 +1,4 @@
-/**
- * Módulo de Gerenciamento de Usuários e Credenciais (Client-Side)
- * Espelho do repositório de usuários com sincronização em memória e sessionStorage
- */
-
-const STORAGE_KEY = 'tfw_mfa_users_store_v1';
+const STORAGE_KEY = 'tfw_mfa_users_store';
 
 /**
  * Cria o estado inicial dos usuários padrão de demonstração
