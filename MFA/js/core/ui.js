@@ -1,8 +1,4 @@
 /**
- * Utilitários de Interface do Usuário (UI Helpers)
- */
-
-/**
  * Exibe uma mensagem de alerta no container da tela indicada
  * @param {string} viewName Nome da view (ex: 'login', 'totp', 'dashboard', 'setup')
  * @param {string} message Mensagem de texto a ser exibida
